@@ -1,0 +1,9 @@
+C:\01-dev\libragri.authentication\libragri.framework.common\bin\Debug\netcoreapp2.0\libragri.framework.common.deps.json
+C:\01-dev\libragri.authentication\libragri.framework.common\bin\Debug\netcoreapp2.0\libragri.framework.common.dll
+C:\01-dev\libragri.authentication\libragri.framework.common\bin\Debug\netcoreapp2.0\libragri.framework.common.pdb
+C:\01-dev\libragri.authentication\libragri.framework.common\obj\Debug\netcoreapp2.0\libragri.framework.common.csprojResolveAssemblyReference.cache
+C:\01-dev\libragri.authentication\libragri.framework.common\obj\Debug\netcoreapp2.0\libragri.framework.common.csproj.CoreCompileInputs.cache
+C:\01-dev\libragri.authentication\libragri.framework.common\obj\Debug\netcoreapp2.0\libragri.framework.common.AssemblyInfoInputs.cache
+C:\01-dev\libragri.authentication\libragri.framework.common\obj\Debug\netcoreapp2.0\libragri.framework.common.AssemblyInfo.cs
+C:\01-dev\libragri.authentication\libragri.framework.common\obj\Debug\netcoreapp2.0\libragri.framework.common.dll
+C:\01-dev\libragri.authentication\libragri.framework.common\obj\Debug\netcoreapp2.0\libragri.framework.common.pdb

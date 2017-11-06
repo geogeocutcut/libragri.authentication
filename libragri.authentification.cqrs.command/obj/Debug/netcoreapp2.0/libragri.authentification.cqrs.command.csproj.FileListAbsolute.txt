@@ -1,0 +1,4 @@
+C:\01-dev\libragri.authentication\libragri.authentification.cqrs.command\obj\Debug\netcoreapp2.0\libragri.authentification.cqrs.command.csprojResolveAssemblyReference.cache
+C:\01-dev\libragri.authentication\libragri.authentification.cqrs.command\obj\Debug\netcoreapp2.0\libragri.authentification.cqrs.command.csproj.CoreCompileInputs.cache
+C:\01-dev\libragri.authentication\libragri.authentification.cqrs.command\obj\Debug\netcoreapp2.0\libragri.authentification.cqrs.command.AssemblyInfoInputs.cache
+C:\01-dev\libragri.authentication\libragri.authentification.cqrs.command\obj\Debug\netcoreapp2.0\libragri.authentification.cqrs.command.AssemblyInfo.cs
