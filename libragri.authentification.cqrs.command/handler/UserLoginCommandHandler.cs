@@ -8,19 +8,19 @@ using System.Text;
 
 namespace libragri.authentification.cqrs.command.handler
 {
-    public class LoginCommandHandler : CommandHandler<UserModel, LoginCommand>
+    public class UserLoginCommandHandler : CommandHandler<UserModel, UserLoginCommand>
     {
 
         public IUserRespository repository;
 
-        public LoginCommandHandler(IUserRespository repo)
+        public UserLoginCommandHandler(IUserRespository repo)
         {
             repository = repo;
         }
-        public override UserModel handle(LoginCommand commandtodo)
+        public override UserModel handle(UserLoginCommand commandtodo)
         {
-            UserModel user= repository.GetByLogin(commandtodo.Login);
-            if(user.PwdSHA1==commandtodo.PwdSHA1)
+            UserModel user = repository.GetByLogin(commandtodo.Login);
+            if(user.PwdSHA1 == commandtodo.PwdSHA1)
             {
                 return user;
             }
@@ -29,6 +29,5 @@ namespace libragri.authentification.cqrs.command.handler
                 throw new Exception("User not found");
             }
         }
-
     }
 }
