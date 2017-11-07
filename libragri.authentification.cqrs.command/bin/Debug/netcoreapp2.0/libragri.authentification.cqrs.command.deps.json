@@ -1,0 +1,79 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v2.0",
+    "signature": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v2.0": {
+      "libragri.authentification.cqrs.command/1.0.0": {
+        "dependencies": {
+          "libragri.authentication.model": "1.0.0",
+          "libragri.authentication.repository.interfaces": "1.0.0",
+          "libragri.core.cqrs": "1.0.0",
+          "libragri.core.repository": "1.0.0"
+        },
+        "runtime": {
+          "libragri.authentification.cqrs.command.dll": {}
+        }
+      },
+      "libragri.authentication.model/1.0.0": {
+        "dependencies": {
+          "libragri.core.cqrs": "1.0.0"
+        },
+        "runtime": {
+          "libragri.authentication.model.dll": {}
+        }
+      },
+      "libragri.authentication.repository.interfaces/1.0.0": {
+        "dependencies": {
+          "libragri.authentication.model": "1.0.0",
+          "libragri.core.repository": "1.0.0"
+        },
+        "runtime": {
+          "libragri.authentication.repository.interfaces.dll": {}
+        }
+      },
+      "libragri.core.cqrs/1.0.0": {
+        "runtime": {
+          "libragri.core.cqrs.dll": {}
+        }
+      },
+      "libragri.core.repository/1.0.0": {
+        "dependencies": {
+          "libragri.core.cqrs": "1.0.0"
+        },
+        "runtime": {
+          "libragri.core.repository.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "libragri.authentification.cqrs.command/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "libragri.authentication.model/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "libragri.authentication.repository.interfaces/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "libragri.core.cqrs/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "libragri.core.repository/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

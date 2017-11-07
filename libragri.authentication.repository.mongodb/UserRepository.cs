@@ -1,6 +1,6 @@
 ﻿using libragri.authentication.model;
 using libragri.authentication.repository.interfaces;
-using libragri.framework.repository;
+using libragri.core.repository;
 using System;
 
 namespace libragri.authentication.repository.mongodb
@@ -9,6 +9,11 @@ namespace libragri.authentication.repository.mongodb
     {
         public UserRepository(IStore<string, UserModel> storeTmp) : base(storeTmp)
         {
+        }
+
+        UserModel IUserRespository.GetByLogin(string Login)
+        {
+            throw new NotImplementedException();
         }
     }
 }

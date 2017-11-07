@@ -1,0 +1,15 @@
+C:\00-dev\xx-perso\libragri\libragri.authentication.api\bin\Debug\netcoreapp2.0\libragri.authentication.api.deps.json
+C:\00-dev\xx-perso\libragri\libragri.authentication.api\bin\Debug\netcoreapp2.0\libragri.authentication.api.runtimeconfig.json
+C:\00-dev\xx-perso\libragri\libragri.authentication.api\bin\Debug\netcoreapp2.0\libragri.authentication.api.runtimeconfig.dev.json
+C:\00-dev\xx-perso\libragri\libragri.authentication.api\bin\Debug\netcoreapp2.0\libragri.authentication.api.dll
+C:\00-dev\xx-perso\libragri\libragri.authentication.api\bin\Debug\netcoreapp2.0\libragri.authentication.api.pdb
+C:\00-dev\xx-perso\libragri\libragri.authentication.api\bin\Debug\netcoreapp2.0\libragri.authentication.model.dll
+C:\00-dev\xx-perso\libragri\libragri.authentication.api\bin\Debug\netcoreapp2.0\libragri.core.cqrs.dll
+C:\00-dev\xx-perso\libragri\libragri.authentication.api\bin\Debug\netcoreapp2.0\libragri.authentication.model.pdb
+C:\00-dev\xx-perso\libragri\libragri.authentication.api\bin\Debug\netcoreapp2.0\libragri.core.cqrs.pdb
+C:\00-dev\xx-perso\libragri\libragri.authentication.api\obj\Debug\netcoreapp2.0\libragri.authentication.api.csprojResolveAssemblyReference.cache
+C:\00-dev\xx-perso\libragri\libragri.authentication.api\obj\Debug\netcoreapp2.0\libragri.authentication.api.csproj.CoreCompileInputs.cache
+C:\00-dev\xx-perso\libragri\libragri.authentication.api\obj\Debug\netcoreapp2.0\libragri.authentication.api.AssemblyInfoInputs.cache
+C:\00-dev\xx-perso\libragri\libragri.authentication.api\obj\Debug\netcoreapp2.0\libragri.authentication.api.AssemblyInfo.cs
+C:\00-dev\xx-perso\libragri\libragri.authentication.api\obj\Debug\netcoreapp2.0\libragri.authentication.api.dll
+C:\00-dev\xx-perso\libragri\libragri.authentication.api\obj\Debug\netcoreapp2.0\libragri.authentication.api.pdb

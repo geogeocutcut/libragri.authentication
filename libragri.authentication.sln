@@ -9,7 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00 - Core", "00 - Core", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 - Model", "01 - Model", "{CBEAC04D-CDCB-4402-B898-5B1B45B338E9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "libragri.core.repository", "libragri.framework.repository\libragri.core.repository.csproj", "{37D84404-EC1E-4546-95E7-A44305FF3662}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "libragri.core.repository", "libragri.core.repository\libragri.core.repository.csproj", "{37D84404-EC1E-4546-95E7-A44305FF3662}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02 - DAL", "02 - DAL", "{B6221216-1C67-4657-9B24-B674DB862795}"
 EndProject
