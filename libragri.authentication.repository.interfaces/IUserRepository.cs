@@ -4,8 +4,7 @@ using System;
 
 namespace libragri.authentication.repository.interfaces
 {
-    public interface IUserRespository:IRepository<string,UserModel>
+    public interface IUserRepository:IRepository<string,UserData>
     {
-        UserModel GetByLogin(string Login);
     }
 }

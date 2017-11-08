@@ -1,12 +1,12 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace libragri.core.cqrs
 {
-    public abstract class AggregateRoot<TId>
+    public interface IAggregateRoot<TId>
     {
-        public TId Id { get; set; }
+        TId Id { get; set; }
         
     }
 }

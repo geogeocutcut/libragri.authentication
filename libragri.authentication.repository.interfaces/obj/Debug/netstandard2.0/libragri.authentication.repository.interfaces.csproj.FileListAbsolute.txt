@@ -12,3 +12,5 @@ C:\00-dev\xx-perso\libragri\libragri.authentication.repository.interfaces\obj\De
 C:\00-dev\xx-perso\libragri\libragri.authentication.repository.interfaces\obj\Debug\netstandard2.0\libragri.authentication.repository.interfaces.AssemblyInfo.cs
 C:\00-dev\xx-perso\libragri\libragri.authentication.repository.interfaces\obj\Debug\netstandard2.0\libragri.authentication.repository.interfaces.dll
 C:\00-dev\xx-perso\libragri\libragri.authentication.repository.interfaces\obj\Debug\netstandard2.0\libragri.authentication.repository.interfaces.pdb
+C:\00-dev\xx-perso\libragri\libragri.authentication.repository.interfaces\bin\Debug\netstandard2.0\libragri.core.common.dll
+C:\00-dev\xx-perso\libragri\libragri.authentication.repository.interfaces\bin\Debug\netstandard2.0\libragri.core.common.pdb

@@ -26,6 +26,16 @@
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
       },
+      "libragri.core.common/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/libragri.core.common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/libragri.core.common.dll": {}
+        }
+      },
       "libragri.core.cqrs/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -180,6 +190,11 @@
         "netstandard.library.nuspec"
       ]
     },
+    "libragri.core.common/1.0.0": {
+      "type": "project",
+      "path": "../libragri.core.common/libragri.core.common.csproj",
+      "msbuildProject": "../libragri.core.common/libragri.core.common.csproj"
+    },
     "libragri.core.cqrs/1.0.0": {
       "type": "project",
       "path": "../libragri.core.cqrs/libragri.core.cqrs.csproj",
@@ -189,6 +204,7 @@
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
       "NETStandard.Library >= 2.0.0",
+      "libragri.core.common >= 1.0.0",
       "libragri.core.cqrs >= 1.0.0"
     ]
   },
@@ -199,11 +215,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\00-dev\\xx-perso\\libragri\\libragri.core.repository\\libragri.core.repository.csproj",
+      "projectUniqueName": "c:\\00-dev\\xx-perso\\libragri\\libragri.core.repository\\libragri.core.repository.csproj",
       "projectName": "libragri.core.repository",
-      "projectPath": "C:\\00-dev\\xx-perso\\libragri\\libragri.core.repository\\libragri.core.repository.csproj",
+      "projectPath": "c:\\00-dev\\xx-perso\\libragri\\libragri.core.repository\\libragri.core.repository.csproj",
       "packagesPath": "C:\\Users\\glefevre\\.nuget\\packages\\",
-      "outputPath": "C:\\00-dev\\xx-perso\\libragri\\libragri.core.repository\\obj\\",
+      "outputPath": "c:\\00-dev\\xx-perso\\libragri\\libragri.core.repository\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -220,8 +236,11 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "C:\\00-dev\\xx-perso\\libragri\\libragri.core.cqrs\\libragri.core.cqrs.csproj": {
-              "projectPath": "C:\\00-dev\\xx-perso\\libragri\\libragri.core.cqrs\\libragri.core.cqrs.csproj"
+            "c:\\00-dev\\xx-perso\\libragri\\libragri.core.cqrs\\libragri.core.cqrs.csproj": {
+              "projectPath": "c:\\00-dev\\xx-perso\\libragri\\libragri.core.cqrs\\libragri.core.cqrs.csproj"
+            },
+            "c:\\00-dev\\xx-perso\\libragri\\libragri.core.common\\libragri.core.common.csproj": {
+              "projectPath": "c:\\00-dev\\xx-perso\\libragri\\libragri.core.common\\libragri.core.common.csproj"
             }
           }
         }

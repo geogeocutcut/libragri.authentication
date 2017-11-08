@@ -39,6 +39,16 @@
           "bin/placeholder/libragri.authentication.model.dll": {}
         }
       },
+      "libragri.core.common/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/libragri.core.common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/libragri.core.common.dll": {}
+        }
+      },
       "libragri.core.cqrs/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -53,6 +63,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "libragri.core.common": "1.0.0",
           "libragri.core.cqrs": "1.0.0"
         },
         "compile": {
@@ -211,6 +222,11 @@
       "path": "../libragri.authentication.model/libragri.authentication.model.csproj",
       "msbuildProject": "../libragri.authentication.model/libragri.authentication.model.csproj"
     },
+    "libragri.core.common/1.0.0": {
+      "type": "project",
+      "path": "../libragri.core.common/libragri.core.common.csproj",
+      "msbuildProject": "../libragri.core.common/libragri.core.common.csproj"
+    },
     "libragri.core.cqrs/1.0.0": {
       "type": "project",
       "path": "../libragri.core.cqrs/libragri.core.cqrs.csproj",
@@ -236,11 +252,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\00-dev\\xx-perso\\libragri\\libragri.authentication.repository.interfaces\\libragri.authentication.repository.interfaces.csproj",
+      "projectUniqueName": "c:\\00-dev\\xx-perso\\libragri\\libragri.authentication.repository.interfaces\\libragri.authentication.repository.interfaces.csproj",
       "projectName": "libragri.authentication.repository.interfaces",
-      "projectPath": "C:\\00-dev\\xx-perso\\libragri\\libragri.authentication.repository.interfaces\\libragri.authentication.repository.interfaces.csproj",
+      "projectPath": "c:\\00-dev\\xx-perso\\libragri\\libragri.authentication.repository.interfaces\\libragri.authentication.repository.interfaces.csproj",
       "packagesPath": "C:\\Users\\glefevre\\.nuget\\packages\\",
-      "outputPath": "C:\\00-dev\\xx-perso\\libragri\\libragri.authentication.repository.interfaces\\obj\\",
+      "outputPath": "c:\\00-dev\\xx-perso\\libragri\\libragri.authentication.repository.interfaces\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -257,11 +273,11 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "C:\\00-dev\\xx-perso\\libragri\\libragri.authentication.model\\libragri.authentication.model.csproj": {
-              "projectPath": "C:\\00-dev\\xx-perso\\libragri\\libragri.authentication.model\\libragri.authentication.model.csproj"
+            "c:\\00-dev\\xx-perso\\libragri\\libragri.authentication.model\\libragri.authentication.model.csproj": {
+              "projectPath": "c:\\00-dev\\xx-perso\\libragri\\libragri.authentication.model\\libragri.authentication.model.csproj"
             },
-            "C:\\00-dev\\xx-perso\\libragri\\libragri.core.repository\\libragri.core.repository.csproj": {
-              "projectPath": "C:\\00-dev\\xx-perso\\libragri\\libragri.core.repository\\libragri.core.repository.csproj"
+            "c:\\00-dev\\xx-perso\\libragri\\libragri.core.repository\\libragri.core.repository.csproj": {
+              "projectPath": "c:\\00-dev\\xx-perso\\libragri\\libragri.core.repository\\libragri.core.repository.csproj"
             }
           }
         }

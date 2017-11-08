@@ -2,18 +2,15 @@
 using libragri.authentication.repository.interfaces;
 using libragri.core.repository;
 using System;
+using libragri.core.common;
 
 namespace libragri.authentication.repository.mongodb
 {
-    public class UserRepository : Repository<string, UserModel>, IUserRespository
+    public class UserRepository : Repository<string, UserData>, IUserRepository
     {
-        public UserRepository(IStore<string, UserModel> storeTmp) : base(storeTmp)
+        public UserRepository(IStore<string, UserData> store) : base(store)
         {
-        }
 
-        UserModel IUserRespository.GetByLogin(string Login)
-        {
-            throw new NotImplementedException();
         }
     }
 }

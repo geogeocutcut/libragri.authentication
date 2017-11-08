@@ -4,16 +4,19 @@ using System.Text;
 
 namespace libragri.core.cqrs
 {
-    public class EventDispatcherMiddleware : BusMiddleware<IList<IEvent>, IMessage<IList<IEvent>>>
+    public class EventDispatcherMiddleware : IBusMiddleware<IList<IEvent>, IMessage>
     {
         IEventBus eventBus;
-
+        public IHandler Next { get; set; }
+        
         public EventDispatcherMiddleware(IHandler next, IEventBus evtBus)
         {
             this.Next = next;
             this.eventBus = evtBus;
         }
-        public override IList<IEvent> handle(IMessage<IList<IEvent>> cmd)
+
+         
+        public IList<IEvent> handle(IMessage cmd)
         {
             IList<IEvent> events =(IList<IEvent>)this.Next.handle(cmd);
             foreach(IEvent e in events)
@@ -21,6 +24,16 @@ namespace libragri.core.cqrs
                 eventBus.Dispatch(e);
             }
             return events;
+        }
+
+        IList<IEvent> IBusMiddleware<IList<IEvent>, IMessage>.handle(IMessage message)
+        {
+            throw new NotImplementedException();
+        }
+
+        object IHandler.handle(object obj)
+        {
+            throw new NotImplementedException();
         }
     }
 }

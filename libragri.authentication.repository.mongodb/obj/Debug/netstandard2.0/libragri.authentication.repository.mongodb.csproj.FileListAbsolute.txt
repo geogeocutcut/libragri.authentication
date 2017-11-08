@@ -14,3 +14,5 @@ C:\00-dev\xx-perso\libragri\libragri.authentication.repository.mongodb\bin\Debug
 C:\00-dev\xx-perso\libragri\libragri.authentication.repository.mongodb\bin\Debug\netstandard2.0\libragri.core.repository.pdb
 C:\00-dev\xx-perso\libragri\libragri.authentication.repository.mongodb\obj\Debug\netstandard2.0\libragri.authentication.repository.mongodb.dll
 C:\00-dev\xx-perso\libragri\libragri.authentication.repository.mongodb\obj\Debug\netstandard2.0\libragri.authentication.repository.mongodb.pdb
+C:\00-dev\xx-perso\libragri\libragri.authentication.repository.mongodb\bin\Debug\netstandard2.0\libragri.core.common.dll
+C:\00-dev\xx-perso\libragri\libragri.authentication.repository.mongodb\bin\Debug\netstandard2.0\libragri.core.common.pdb

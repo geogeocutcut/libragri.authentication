@@ -199,11 +199,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\00-dev\\xx-perso\\libragri\\libragri.authentication.model\\libragri.authentication.model.csproj",
+      "projectUniqueName": "c:\\00-dev\\xx-perso\\libragri\\libragri.authentication.model\\libragri.authentication.model.csproj",
       "projectName": "libragri.authentication.model",
-      "projectPath": "C:\\00-dev\\xx-perso\\libragri\\libragri.authentication.model\\libragri.authentication.model.csproj",
+      "projectPath": "c:\\00-dev\\xx-perso\\libragri\\libragri.authentication.model\\libragri.authentication.model.csproj",
       "packagesPath": "C:\\Users\\glefevre\\.nuget\\packages\\",
-      "outputPath": "C:\\00-dev\\xx-perso\\libragri\\libragri.authentication.model\\obj\\",
+      "outputPath": "c:\\00-dev\\xx-perso\\libragri\\libragri.authentication.model\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -220,8 +220,8 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "C:\\00-dev\\xx-perso\\libragri\\libragri.core.cqrs\\libragri.core.cqrs.csproj": {
-              "projectPath": "C:\\00-dev\\xx-perso\\libragri\\libragri.core.cqrs\\libragri.core.cqrs.csproj"
+            "c:\\00-dev\\xx-perso\\libragri\\libragri.core.cqrs\\libragri.core.cqrs.csproj": {
+              "projectPath": "c:\\00-dev\\xx-perso\\libragri\\libragri.core.cqrs\\libragri.core.cqrs.csproj"
             }
           }
         }

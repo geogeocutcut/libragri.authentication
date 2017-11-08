@@ -53,6 +53,16 @@
           "bin/placeholder/libragri.authentication.repository.interfaces.dll": {}
         }
       },
+      "libragri.core.common/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/libragri.core.common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/libragri.core.common.dll": {}
+        }
+      },
       "libragri.core.cqrs/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -67,6 +77,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "libragri.core.common": "1.0.0",
           "libragri.core.cqrs": "1.0.0"
         },
         "compile": {
@@ -230,6 +241,11 @@
       "path": "../libragri.authentication.repository.interfaces/libragri.authentication.repository.interfaces.csproj",
       "msbuildProject": "../libragri.authentication.repository.interfaces/libragri.authentication.repository.interfaces.csproj"
     },
+    "libragri.core.common/1.0.0": {
+      "type": "project",
+      "path": "../libragri.core.common/libragri.core.common.csproj",
+      "msbuildProject": "../libragri.core.common/libragri.core.common.csproj"
+    },
     "libragri.core.cqrs/1.0.0": {
       "type": "project",
       "path": "../libragri.core.cqrs/libragri.core.cqrs.csproj",
@@ -244,7 +260,8 @@
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
       "NETStandard.Library >= 2.0.0",
-      "libragri.authentication.repository.interfaces >= 1.0.0"
+      "libragri.authentication.repository.interfaces >= 1.0.0",
+      "libragri.core.common >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -277,6 +294,9 @@
           "projectReferences": {
             "C:\\00-dev\\xx-perso\\libragri\\libragri.authentication.repository.interfaces\\libragri.authentication.repository.interfaces.csproj": {
               "projectPath": "C:\\00-dev\\xx-perso\\libragri\\libragri.authentication.repository.interfaces\\libragri.authentication.repository.interfaces.csproj"
+            },
+            "C:\\00-dev\\xx-perso\\libragri\\libragri.core.common\\libragri.core.common.csproj": {
+              "projectPath": "C:\\00-dev\\xx-perso\\libragri\\libragri.core.common\\libragri.core.common.csproj"
             }
           }
         }

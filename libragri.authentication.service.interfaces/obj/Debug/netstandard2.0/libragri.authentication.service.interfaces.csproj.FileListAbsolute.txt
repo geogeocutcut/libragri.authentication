@@ -1,0 +1,8 @@
+C:\00-dev\xx-perso\libragri\libragri.authentication.service.interfaces\obj\Debug\netstandard2.0\libragri.authentication.service.interfaces.csproj.CoreCompileInputs.cache
+C:\00-dev\xx-perso\libragri\libragri.authentication.service.interfaces\obj\Debug\netstandard2.0\libragri.authentication.service.interfaces.AssemblyInfoInputs.cache
+C:\00-dev\xx-perso\libragri\libragri.authentication.service.interfaces\obj\Debug\netstandard2.0\libragri.authentication.service.interfaces.AssemblyInfo.cs
+C:\00-dev\xx-perso\libragri\libragri.authentication.service.interfaces\bin\Debug\netstandard2.0\libragri.authentication.service.interfaces.deps.json
+C:\00-dev\xx-perso\libragri\libragri.authentication.service.interfaces\bin\Debug\netstandard2.0\libragri.authentication.service.interfaces.dll
+C:\00-dev\xx-perso\libragri\libragri.authentication.service.interfaces\bin\Debug\netstandard2.0\libragri.authentication.service.interfaces.pdb
+C:\00-dev\xx-perso\libragri\libragri.authentication.service.interfaces\obj\Debug\netstandard2.0\libragri.authentication.service.interfaces.dll
+C:\00-dev\xx-perso\libragri\libragri.authentication.service.interfaces\obj\Debug\netstandard2.0\libragri.authentication.service.interfaces.pdb

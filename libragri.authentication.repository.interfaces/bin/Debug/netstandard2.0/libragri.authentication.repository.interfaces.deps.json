@@ -31,6 +31,11 @@
           "libragri.authentication.model.dll": {}
         }
       },
+      "libragri.core.common/1.0.0": {
+        "runtime": {
+          "libragri.core.common.dll": {}
+        }
+      },
       "libragri.core.cqrs/1.0.0": {
         "runtime": {
           "libragri.core.cqrs.dll": {}
@@ -38,6 +43,7 @@
       },
       "libragri.core.repository/1.0.0": {
         "dependencies": {
+          "libragri.core.common": "1.0.0",
           "libragri.core.cqrs": "1.0.0"
         },
         "runtime": {
@@ -67,6 +73,11 @@
       "hashPath": "netstandard.library.2.0.0.nupkg.sha512"
     },
     "libragri.authentication.model/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "libragri.core.common/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

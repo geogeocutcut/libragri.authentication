@@ -2,16 +2,17 @@
 using libragri.core.cqrs;
 using System;
 using System.Collections.Generic;
+using libragri.core.common;
 
 namespace libragri.core.repository
 {
-    public class Repository<TId, TEntity> : IRepository<TId, TEntity> where TEntity : AggregateRoot<TId>
+    public class Repository<TId, TEntity> : IRepository<TId, TEntity> where TEntity : IAggregateRoot<TId>
     {
         IStore<TId, TEntity> store;
 
-        public Repository(IStore<TId, TEntity> storeTmp)
+        public Repository(IStore<TId, TEntity> store)
         {
-            store=storeTmp;
+            this.store=store;
         }
 
         public void Delete(TEntity entity)
@@ -27,6 +28,12 @@ namespace libragri.core.repository
         public TEntity GetById(TId id)
         {
             return store.FindById(id);
+        }
+
+        
+        public IList<TEntity> FindWhere(System.Linq.Expressions.Expression<System.Func<TEntity, bool>> predicate)
+        {
+            return store.FindWhere(predicate);
         }
 
         public void Upsert(TEntity entity)

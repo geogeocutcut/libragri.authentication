@@ -7,7 +7,7 @@ namespace libragri.core.cqrs
     public interface ICommandBus
     {
         R Dispatch<R, C>(C commandtodo)
-            where C : ICommand<R>;
+            where C : ICommand;
         void Subscribe(Type t, IHandler h);
     }
 }

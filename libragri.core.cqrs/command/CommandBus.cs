@@ -21,7 +21,7 @@ namespace libragri.core.cqrs
                 handlers.Add(t, new EventDispatcherMiddleware(h, this.eventBus));
             }
         }
-        public R Dispatch<R,C>(C commandtodo) where C : ICommand<R>
+        public R Dispatch<R,C>(C commandtodo) where C : ICommand
         {
             return (R)handlers[typeof(C)].handle(commandtodo);
         }

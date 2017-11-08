@@ -18,3 +18,5 @@ C:\00-dev\xx-perso\libragri\libragri.core.repository\obj\Debug\netstandard2.0\li
 C:\00-dev\xx-perso\libragri\libragri.core.repository\obj\Debug\netstandard2.0\libragri.core.repository.AssemblyInfo.cs
 C:\00-dev\xx-perso\libragri\libragri.core.repository\obj\Debug\netstandard2.0\libragri.core.repository.dll
 C:\00-dev\xx-perso\libragri\libragri.core.repository\obj\Debug\netstandard2.0\libragri.core.repository.pdb
+C:\00-dev\xx-perso\libragri\libragri.core.repository\bin\Debug\netstandard2.0\libragri.core.common.dll
+C:\00-dev\xx-perso\libragri\libragri.core.repository\bin\Debug\netstandard2.0\libragri.core.common.pdb

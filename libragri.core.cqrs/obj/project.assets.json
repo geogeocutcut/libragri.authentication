@@ -183,11 +183,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\00-dev\\xx-perso\\libragri\\libragri.core.cqrs\\libragri.core.cqrs.csproj",
+      "projectUniqueName": "c:\\00-dev\\xx-perso\\libragri\\libragri.core.cqrs\\libragri.core.cqrs.csproj",
       "projectName": "libragri.core.cqrs",
-      "projectPath": "C:\\00-dev\\xx-perso\\libragri\\libragri.core.cqrs\\libragri.core.cqrs.csproj",
+      "projectPath": "c:\\00-dev\\xx-perso\\libragri\\libragri.core.cqrs\\libragri.core.cqrs.csproj",
       "packagesPath": "C:\\Users\\glefevre\\.nuget\\packages\\",
-      "outputPath": "C:\\00-dev\\xx-perso\\libragri\\libragri.core.cqrs\\obj\\",
+      "outputPath": "c:\\00-dev\\xx-perso\\libragri\\libragri.core.cqrs\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

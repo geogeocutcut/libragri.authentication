@@ -18,6 +18,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\libragri.authentication.model\libragri.authentication.model.csproj" />
+  
+    <ProjectReference Include="..\libragri.authentication.service.interfaces\libragri.authentication.service.interfaces.csproj" />
+    <ProjectReference Include="..\libragri.core.common\libragri.core.common.csproj" />
   </ItemGroup>
 
 </Project>
