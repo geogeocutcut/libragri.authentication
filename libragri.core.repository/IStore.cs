@@ -1,18 +1,18 @@
 ﻿
-using libragri.core.cqrs;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using libragri.core.common;
 
 namespace libragri.core.repository
 {
-    public interface IStore<TId, TEntity> where TEntity : IAggregateRoot<TId>
+    public interface IStore <TId>
     {
-        TEntity FindById(TId id);
-        void Upsert(TEntity entity);
-        void Remove(TEntity entity);
-        IList<TEntity> FindAll();
-        IList<TEntity> FindWhere(System.Linq.Expressions.Expression<System.Func<TEntity, bool>> predicate);
+        TEntity FindById<TEntity>(TId id) where TEntity : Entity<TId>;
+        void Upsert<TEntity>(TEntity entity) where TEntity : Entity<TId>;
+        void Remove<TEntity>(TEntity entity) where TEntity : Entity<TId>;
+        IList<TEntity> FindAll<TEntity>() where TEntity : Entity<TId>;
+        IList<TEntity> FindWhere<TEntity>(System.Linq.Expressions.Expression<System.Func<TEntity, bool>> predicate) where TEntity : Entity<TId>;
 
     }
 }

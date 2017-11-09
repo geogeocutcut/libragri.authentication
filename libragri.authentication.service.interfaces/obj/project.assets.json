@@ -25,12 +25,35 @@
         "build": {
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
+      },
+      "libragri.authentication.model/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "libragri.core.cqrs": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/libragri.authentication.model.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/libragri.authentication.model.dll": {}
+        }
+      },
+      "libragri.core.cqrs/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/libragri.core.cqrs.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/libragri.core.cqrs.dll": {}
+        }
       }
     }
   },
   "libraries": {
     "Microsoft.NETCore.Platforms/1.1.0": {
-      "sha512": "0WrRPrLBjQDMdZWFSAduCJ38n/+GCaeZVETXJJlVE1jp8XTIXBWxw63RK5Io/X0wdIK3+1OaBzLPgYeg5S128w==",
+      "sha512": "uWOrKLJ+FU01fH9CloCkG7FETTH52eERQoY/vDSa8ZFw7c3r+iRRNiO7J7LG0ksB2Qolg6zbjM/OY6rdnYQTIQ==",
       "type": "package",
       "path": "microsoft.netcore.platforms/1.1.0",
       "files": [
@@ -169,41 +192,58 @@
         "netstandard.library.2.0.0.nupkg.sha512",
         "netstandard.library.nuspec"
       ]
+    },
+    "libragri.authentication.model/1.0.0": {
+      "type": "project",
+      "path": "../libragri.authentication.model/libragri.authentication.model.csproj",
+      "msbuildProject": "../libragri.authentication.model/libragri.authentication.model.csproj"
+    },
+    "libragri.core.cqrs/1.0.0": {
+      "type": "project",
+      "path": "../libragri.core.cqrs/libragri.core.cqrs.csproj",
+      "msbuildProject": "../libragri.core.cqrs/libragri.core.cqrs.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
-      "NETStandard.Library >= 2.0.0"
+      "NETStandard.Library >= 2.0.0",
+      "libragri.authentication.model >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\glefevre\\.nuget\\packages\\": {},
+    "C:\\Users\\geffb\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\00-dev\\xx-perso\\libragri\\libragri.authentication.service.interfaces\\libragri.authentication.service.interfaces.csproj",
+      "projectUniqueName": "C:\\01-dev\\libragri.authentication\\libragri.authentication.service.interfaces\\libragri.authentication.service.interfaces.csproj",
       "projectName": "libragri.authentication.service.interfaces",
-      "projectPath": "c:\\00-dev\\xx-perso\\libragri\\libragri.authentication.service.interfaces\\libragri.authentication.service.interfaces.csproj",
-      "packagesPath": "C:\\Users\\glefevre\\.nuget\\packages\\",
-      "outputPath": "c:\\00-dev\\xx-perso\\libragri\\libragri.authentication.service.interfaces\\obj\\",
+      "projectPath": "C:\\01-dev\\libragri.authentication\\libragri.authentication.service.interfaces\\libragri.authentication.service.interfaces.csproj",
+      "packagesPath": "C:\\Users\\geffb\\.nuget\\packages\\",
+      "outputPath": "C:\\01-dev\\libragri.authentication\\libragri.authentication.service.interfaces\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\glefevre\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\geffb\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netstandard2.0": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\01-dev\\libragri.authentication\\libragri.authentication.model\\libragri.authentication.model.csproj": {
+              "projectPath": "C:\\01-dev\\libragri.authentication\\libragri.authentication.model\\libragri.authentication.model.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

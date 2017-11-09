@@ -40,7 +40,7 @@
   },
   "libraries": {
     "Microsoft.NETCore.Platforms/1.1.0": {
-      "sha512": "0WrRPrLBjQDMdZWFSAduCJ38n/+GCaeZVETXJJlVE1jp8XTIXBWxw63RK5Io/X0wdIK3+1OaBzLPgYeg5S128w==",
+      "sha512": "uWOrKLJ+FU01fH9CloCkG7FETTH52eERQoY/vDSa8ZFw7c3r+iRRNiO7J7LG0ksB2Qolg6zbjM/OY6rdnYQTIQ==",
       "type": "package",
       "path": "microsoft.netcore.platforms/1.1.0",
       "files": [
@@ -193,35 +193,37 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\glefevre\\.nuget\\packages\\": {},
+    "C:\\Users\\geffb\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\00-dev\\xx-perso\\libragri\\libragri.authentication.model\\libragri.authentication.model.csproj",
+      "projectUniqueName": "C:\\01-dev\\libragri.authentication\\libragri.authentication.model\\libragri.authentication.model.csproj",
       "projectName": "libragri.authentication.model",
-      "projectPath": "c:\\00-dev\\xx-perso\\libragri\\libragri.authentication.model\\libragri.authentication.model.csproj",
-      "packagesPath": "C:\\Users\\glefevre\\.nuget\\packages\\",
-      "outputPath": "c:\\00-dev\\xx-perso\\libragri\\libragri.authentication.model\\obj\\",
+      "projectPath": "C:\\01-dev\\libragri.authentication\\libragri.authentication.model\\libragri.authentication.model.csproj",
+      "packagesPath": "C:\\Users\\geffb\\.nuget\\packages\\",
+      "outputPath": "C:\\01-dev\\libragri.authentication\\libragri.authentication.model\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\glefevre\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\geffb\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "c:\\00-dev\\xx-perso\\libragri\\libragri.core.cqrs\\libragri.core.cqrs.csproj": {
-              "projectPath": "c:\\00-dev\\xx-perso\\libragri\\libragri.core.cqrs\\libragri.core.cqrs.csproj"
+            "C:\\01-dev\\libragri.authentication\\libragri.core.cqrs\\libragri.core.cqrs.csproj": {
+              "projectPath": "C:\\01-dev\\libragri.authentication\\libragri.core.cqrs\\libragri.core.cqrs.csproj"
             }
           }
         }

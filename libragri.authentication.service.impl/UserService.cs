@@ -11,7 +11,7 @@ using System.Linq;
 
 namespace libragri.authentication.service.impl
 {
-    public class UserService : IUserService
+    public class UserService<TId> : IUserService<TId>
     {
         IFactory factory;
         
@@ -20,10 +20,10 @@ namespace libragri.authentication.service.impl
             this.factory=factory;
         }
 
-        public UserData Authentify(string username, string pwd)
+        public UserData<TId> Authentify(string username, string pwd)
         {
-            using(var uow = factory.Resolve<IUnitOfWork>()){
-                var repository = factory.Resolve<IUserRepository>(uow);
+            using(var uow = factory.Resolve<IUnitOfWork<TId>>()){
+                var repository = factory.Resolve<IUserRepository<TId>>(uow);
                 var user = repository.FindWhere(x=>x.UserName==username).FirstOrDefault();
                 if(user==null ||user?.PwdSHA1!=pwd)
                 {
@@ -33,10 +33,10 @@ namespace libragri.authentication.service.impl
             }
         }
 
-        public UserData GetByUserName(string username)
+        public UserData<TId> GetByUserName(string username)
         {
-            using(var uow = factory.Resolve<IUnitOfWork>()){
-                var repository = factory.Resolve<IUserRepository>(uow);
+            using(var uow = factory.Resolve<IUnitOfWork<TId>>()){
+                var repository = factory.Resolve<IUserRepository<TId>>(uow);
                 var user = repository.FindWhere(x=>x.UserName==username).FirstOrDefault();
                 return user;
             }

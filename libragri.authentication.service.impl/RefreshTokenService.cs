@@ -11,7 +11,7 @@ using System.Linq;
 
 namespace libragri.authentication.service.impl
 {
-    public class RefreshTokenService : IRefreshTokenService
+    public class RefreshTokenService<TId> : IRefreshTokenService<TId>
     {
         IFactory factory;
         
@@ -19,25 +19,30 @@ namespace libragri.authentication.service.impl
         {
             this.factory=factory;
         }
-        public void Add(RefreshTokenData token)
+        public void Add(RefreshTokenData<TId> token)
         {
-            using(var uow = factory.Resolve<IUnitOfWork>()){
-                var repository = factory.Resolve<IRefreshTokenRepository>(uow);
+            using(var uow = factory.Resolve<IUnitOfWork<TId>>()){
+                var repository = factory.Resolve<IRefreshTokenRepository<TId>>(uow);
                 repository.Upsert(token);
             }
         }
 
-        public RefreshTokenData GetByToken(string token,string cliendid)
+        public RefreshTokenData<TId> CheckRefreshToken(string token,string cliendid)
         {
-            using(var uow = factory.Resolve<IUnitOfWork>()){
-                var repository = factory.Resolve<IRefreshTokenRepository>(uow);
-                return repository.FindWhere(x=> x.Token==token && x.ClientId==cliendid).FirstOrDefault();
+            using(var uow = factory.Resolve<IUnitOfWork<TId>>()){
+                var repository = factory.Resolve<IRefreshTokenRepository<TId>>(uow);
+                var refreshtoken = repository.FindWhere(x=> x.Token==token && x.ClientId==cliendid).FirstOrDefault();
+                if(refreshtoken==null)
+                {
+                    throw new ServiceException("905","invalid refresh token");
+                }
+                return refreshtoken;
             }
         }
-        public void ExpireToken(RefreshTokenData token)
+        public void ExpireToken(RefreshTokenData<TId> token)
         {
-            using(var uow = factory.Resolve<IUnitOfWork>()){
-                var repository = factory.Resolve<IRefreshTokenRepository>(uow);
+            using(var uow = factory.Resolve<IUnitOfWork<TId>>()){
+                var repository = factory.Resolve<IRefreshTokenRepository<TId>>(uow);
                 repository.Delete(token);
             }
         }

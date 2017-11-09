@@ -4,9 +4,9 @@ using System.Text;
 
 namespace libragri.core.cqrs
 {
-    public interface IAggregateRoot<TId>
+    public abstract class AggregateRoot<TId>
     {
-        TId Id { get; set; }
+        public TId Id { get; set; }
         
     }
 }

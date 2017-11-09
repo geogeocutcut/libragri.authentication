@@ -8,3 +8,13 @@ C:\00-dev\xx-perso\libragri\libragri.authentication.model\obj\Debug\netstandard2
 C:\00-dev\xx-perso\libragri\libragri.authentication.model\obj\Debug\netstandard2.0\libragri.authentication.model.AssemblyInfo.cs
 C:\00-dev\xx-perso\libragri\libragri.authentication.model\obj\Debug\netstandard2.0\libragri.authentication.model.dll
 C:\00-dev\xx-perso\libragri\libragri.authentication.model\obj\Debug\netstandard2.0\libragri.authentication.model.pdb
+C:\01-dev\libragri.authentication\libragri.authentication.model\bin\Debug\netstandard2.0\libragri.authentication.model.deps.json
+C:\01-dev\libragri.authentication\libragri.authentication.model\bin\Debug\netstandard2.0\libragri.authentication.model.dll
+C:\01-dev\libragri.authentication\libragri.authentication.model\bin\Debug\netstandard2.0\libragri.authentication.model.pdb
+C:\01-dev\libragri.authentication\libragri.authentication.model\bin\Debug\netstandard2.0\libragri.core.cqrs.dll
+C:\01-dev\libragri.authentication\libragri.authentication.model\bin\Debug\netstandard2.0\libragri.core.cqrs.pdb
+C:\01-dev\libragri.authentication\libragri.authentication.model\obj\Debug\netstandard2.0\libragri.authentication.model.csproj.CoreCompileInputs.cache
+C:\01-dev\libragri.authentication\libragri.authentication.model\obj\Debug\netstandard2.0\libragri.authentication.model.AssemblyInfoInputs.cache
+C:\01-dev\libragri.authentication\libragri.authentication.model\obj\Debug\netstandard2.0\libragri.authentication.model.AssemblyInfo.cs
+C:\01-dev\libragri.authentication\libragri.authentication.model\obj\Debug\netstandard2.0\libragri.authentication.model.dll
+C:\01-dev\libragri.authentication\libragri.authentication.model\obj\Debug\netstandard2.0\libragri.authentication.model.pdb

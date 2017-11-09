@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\libragri.core.cqrs\libragri.core.cqrs.csproj" />
+    <ProjectReference Include="..\libragri.core.common\libragri.core.common.csproj" />
   </ItemGroup>
 
 </Project>

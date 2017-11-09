@@ -4,9 +4,9 @@ using libragri.authentication.model;
 
 namespace libragri.authentication.service.interfaces
 {
-    public interface IUserService
+    public interface IUserService<TId>
     {
-        UserData GetByUserName(string username);
-        UserData Authentify(string username,string pwd);
+        UserData<TId> GetByUserName(string username);
+        UserData<TId> Authentify(string username,string pwd);
     }
 }

@@ -1,10 +1,11 @@
-using libragri.core.cqrs;
+
+
+using libragri.core.common;
 
 namespace libragri.authentication.model
 {
-    public class RefreshTokenData:IAggregateRoot<string>
+    public class RefreshTokenData<TId>:Entity<TId>
     {
-        public string Id { get; set; }
 
         public string ClientId { get; set; }
 

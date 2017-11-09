@@ -4,7 +4,7 @@ using System;
 
 namespace libragri.authentication.repository.interfaces
 {
-    public interface IUserRepository:IRepository<string,UserData>
+    public interface IUserRepository<TId>:IRepository<TId,UserData<TId>>
     {
     }
 }

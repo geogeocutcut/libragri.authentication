@@ -29,7 +29,7 @@ namespace libragri.authentication.api.Controllers
         [Route("oauth/token")]
         public IActionResult GetToken(string login,string pwdSHA1)
         {
-            var service = _factory.Resolve<IUserService>(_factory);
+            var service = _factory.Resolve<IUserService<string>>(_factory);
             var data = service.Authentify(login,pwdSHA1);
             var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("test"));
 
@@ -88,18 +88,18 @@ namespace libragri.authentication.api.Controllers
             }
         }
 
-        private ResponseData DoPasswordAsync(Parameters parameters)
+        private async Task<ResponseData> DoPasswordAsync(Parameters parameters)
         {
             //validate the client_id/client_secret/username/password       
-            var userService = _factory.Resolve<IUserService>(_factory);
-            var refreshtokenService = _factory.Resolve<IRefreshTokenService>(_factory);
+            var userService = _factory.Resolve<IUserService<string>>(_factory);
+            var refreshtokenService = _factory.Resolve<IRefreshTokenService<string>>(_factory);
 
             var user = userService.Authentify(parameters.username,parameters.password);                                   
 
 
             var refresh_token = Guid.NewGuid().ToString().Replace("-", "");
 
-            var token = new RefreshTokenData
+            var token = new RefreshTokenData<string>
             {
                 ClientId = parameters.client_id,
                 Token = refresh_token,
@@ -119,42 +119,21 @@ namespace libragri.authentication.api.Controllers
         }
 
         //scenario 2 ： get the access_token by refresh_token
-        private ResponseData DoRefreshTokenAsync(Parameters parameters)
+        private async Task<ResponseData> DoRefreshTokenAsync(Parameters parameters)
         {
             
-            var userService = _factory.Resolve<IUserService>(_factory);
-            var refreshtokenService = _factory.Resolve<IRefreshTokenService>(_factory);
+            var refreshtokenService = _factory.Resolve<IRefreshTokenService<string>>(_factory);
 
             var token = refreshtokenService.CheckRefreshToken(parameters.refresh_token, parameters.client_id);
-
-            if (token == null)
-            {
-                return new ResponseData
-                {
-                    Code = "905",
-                    Message = "can not refresh token",
-                    Data = null
-                };
-            }
-
-            if (token.IsStop == 1)
-            {
-                return new ResponseData
-                {
-                    Code = "906",
-                    Message = "refresh token has expired",
-                    Data = null
-                };
-            }
 
             var refresh_token = Guid.NewGuid().ToString().Replace("-", "");
 
             token.IsStop = 1;
 
             //expire the old refresh_token and add a new refresh_token
-            var updateFlag = await _tokenRepository.Delete(token);
+            refreshtokenService.ExpireToken(token);
 
-            var addFlag = await _tokenRepository.Upsert(new RefreshTokenData
+            refreshtokenService.Add(new RefreshTokenData<string>
             {
                 ClientId = parameters.client_id,
                 Token = refresh_token,
@@ -171,38 +150,72 @@ namespace libragri.authentication.api.Controllers
             };
         }
 
-        private string GenerateJwt(string client_id, string refresh_token)  
-        {  
-            var now = DateTime.UtcNow;  
-    
-            var claims = new Claim[]  
-            {  
-                new Claim(JwtRegisteredClaimNames.Sub, client_id),  
-                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),  
-                new Claim(JwtRegisteredClaimNames.Iat, now.ToUniversalTime().ToString(), ClaimValueTypes.Integer64)  
-            };  
-    
-            var symmetricKeyAsBase64 = _settings.Value.Secret;  
-            var keyByteArray = Encoding.ASCII.GetBytes(symmetricKeyAsBase64);  
-            var signingKey = new SymmetricSecurityKey(keyByteArray);  
-    
-            var jwt = new JwtSecurityToken(  
-                issuer: _settings.Value.Iss,  
-                audience: _settings.Value.Aud,  
-                claims: claims,  
-                notBefore: now,  
-                expires: now.Add(TimeSpan.FromMinutes(2)),  
-                signingCredentials: new SigningCredentials(signingKey, SecurityAlgorithms.HmacSha256));  
-            var encodedJwt = new JwtSecurityTokenHandler().WriteToken(jwt);  
-    
-            var response = new  
-            {  
-                access_token = encodedJwt,  
-                expires_in = (int)TimeSpan.FromMinutes(2).TotalSeconds,  
-                refresh_token = refresh_token,  
-            };  
-    
-            return JsonConvert.SerializeObject(response, new JsonSerializerSettings { Formatting = Formatting.Indented });  
+        private string GenerateJwt(string clientId, string userName, string refreshToken, int expireMinutes)
+
+        {
+
+            var now = DateTime.UtcNow;
+
+
+
+            var claims = new Claim[]
+
+            {
+
+                new Claim(JwtRegisteredClaimNames.Sub, clientId),
+
+                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+
+                new Claim(JwtRegisteredClaimNames.Iat, now.ToUniversalTime().ToString(), ClaimValueTypes.Integer64),
+
+                new Claim("Name", userName)
+
+            };
+
+
+
+            var symmetricKeyAsBase64 = _settings.Value.Secret;
+
+            var keyByteArray = Encoding.ASCII.GetBytes(symmetricKeyAsBase64);
+
+            var signingKey = new SymmetricSecurityKey(keyByteArray);
+
+
+
+            var jwt = new JwtSecurityToken(
+
+                issuer: _settings.Value.Iss,
+
+                audience: _settings.Value.Aud,
+
+                claims: claims,
+
+                notBefore: now,
+
+                expires: now.Add(TimeSpan.FromMinutes(expireMinutes)),
+
+                signingCredentials: new SigningCredentials(signingKey, SecurityAlgorithms.HmacSha256));
+
+            var encodedJwt = new JwtSecurityTokenHandler().WriteToken(jwt);
+
+
+
+            var response = new
+
+            {
+
+                access_token = encodedJwt,
+
+                expires_in = (int)TimeSpan.FromMinutes(expireMinutes).TotalSeconds,
+
+                refresh_token = refreshToken,
+
+            };
+
+
+
+            return JsonConvert.SerializeObject(response, new JsonSerializerSettings { Formatting = Formatting.Indented });
+
         }
     }
 }

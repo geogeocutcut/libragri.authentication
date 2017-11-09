@@ -18,9 +18,13 @@
 
   <ItemGroup>
     <ProjectReference Include="..\libragri.authentication.model\libragri.authentication.model.csproj" />
-  
+    <ProjectReference Include="..\libragri.authentication.service.impl\libragri.authentication.service.impl.csproj" />
     <ProjectReference Include="..\libragri.authentication.service.interfaces\libragri.authentication.service.interfaces.csproj" />
+    <ProjectReference Include="..\libragri.authentication.repository.mongodb\libragri.authentication.repository.mongodb.csproj" />
+    <ProjectReference Include="..\libragri.authentication.repository.interfaces\libragri.authentication.repository.interfaces.csproj" />
+    
     <ProjectReference Include="..\libragri.core.common\libragri.core.common.csproj" />
+    <ProjectReference Include="..\libragri.core.repository\libragri.core.repository.csproj" />
   </ItemGroup>
 
 </Project>

@@ -25,7 +25,7 @@ namespace libragri.core.common
         }
 
 
-        void IFactory.Register<TIObject, TObject>()
+        public void Register<TIObject, TObject>()
         {
             Configuration[typeof(TIObject)]=typeof(TObject);
         }
