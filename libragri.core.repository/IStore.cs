@@ -6,7 +6,7 @@ using libragri.core.common;
 
 namespace libragri.core.repository
 {
-    public interface IStore <TId>
+    public interface IStore<TId>
     {
         TEntity FindById<TEntity>(TId id) where TEntity : Entity<TId>;
         void Upsert<TEntity>(TEntity entity) where TEntity : Entity<TId>;

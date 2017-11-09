@@ -10,8 +10,7 @@
       "libragri.core.repository/1.0.0": {
         "dependencies": {
           "NETStandard.Library": "2.0.0",
-          "libragri.core.common": "1.0.0",
-          "libragri.core.cqrs": "1.0.0"
+          "libragri.core.common": "1.0.0"
         },
         "runtime": {
           "libragri.core.repository.dll": {}
@@ -27,11 +26,6 @@
         "runtime": {
           "libragri.core.common.dll": {}
         }
-      },
-      "libragri.core.cqrs/1.0.0": {
-        "runtime": {
-          "libragri.core.cqrs.dll": {}
-        }
       }
     }
   },
@@ -44,7 +38,7 @@
     "Microsoft.NETCore.Platforms/1.1.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-uWOrKLJ+FU01fH9CloCkG7FETTH52eERQoY/vDSa8ZFw7c3r+iRRNiO7J7LG0ksB2Qolg6zbjM/OY6rdnYQTIQ==",
+      "sha512": "sha512-0WrRPrLBjQDMdZWFSAduCJ38n/+GCaeZVETXJJlVE1jp8XTIXBWxw63RK5Io/X0wdIK3+1OaBzLPgYeg5S128w==",
       "path": "microsoft.netcore.platforms/1.1.0",
       "hashPath": "microsoft.netcore.platforms.1.1.0.nupkg.sha512"
     },
@@ -56,11 +50,6 @@
       "hashPath": "netstandard.library.2.0.0.nupkg.sha512"
     },
     "libragri.core.common/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "libragri.core.cqrs/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

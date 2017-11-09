@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -24,71 +24,51 @@ namespace libragri.authentication.api.Controllers
             this._factory = factory;
             this._settings = settings;
         }
-        // GET oauth/token
-        [HttpGet]
+
+
         [Route("oauth/token")]
-        public IActionResult GetToken(string login,string pwdSHA1)
-        {
-            var service = _factory.Resolve<IUserService<string>>(_factory);
-            var data = service.Authentify(login,pwdSHA1);
-            var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("test"));
-
-            var claims = new List<Claim>();
-
-            var token = new JwtSecurityToken(
-                issuer: "your app",
-                audience: "the client of your app",
-                claims: claims,
-                notBefore: DateTime.Now,
-                expires: DateTime.Now.AddDays(28),
-                signingCredentials: new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256)
-            );
-            string jwtToken = new JwtSecurityTokenHandler().WriteToken(token);
-            return new ObjectResult(jwtToken);
-        }
-
-        // GET token/refresh
-        [HttpGet]
-        [Route("token/refresh")]
-        public IEnumerable<string> RefreshToken()
-        {
-            return new string[] { "value1", "value2" };
-        }
-
-
-        [HttpGet("auth")]
-        public async Task<IActionResult> AuthAsync([FromQuery]Parameters parameters)
+        public async Task<IActionResult> AuthAsync(Parameters parameters)
         {
             if (parameters == null)
             {
-                return Json(new ResponseData
-                {
-                    Code = "901",
-                    Message = "Null parameters",
-                    Data = null
-                });
+                throw new ServiceException("bad request","paramters are missing.");
             }
 
             if (parameters.grant_type == "password")
             {
-                return Json(await DoPasswordAsync(parameters));
+                return Ok(await DoPasswordAsync(parameters));
             }
             else if (parameters.grant_type == "refresh_token")
             {
-                return Json(await DoRefreshTokenAsync(parameters));
+                return Ok(await DoRefreshTokenAsync(parameters));
             }
             else
             {
-                return Json(new ResponseData
-                {
-                    Code = "904",
-                    Message = "Bad request",
-                    Data = null
-                });
+                throw new ServiceException("bad request","failed authentication.");
             }
         }
 
-        private async Task<ResponseData> DoPasswordAsync(Parameters parameters)
+        [Route("oauth/validatetoken")]
+        public async Task<IActionResult> ValidateTokenAsync(AuthenticationToken jwt)
+        {
+            var symmetricKeyAsBase64 = _settings.Value.Secret;
+            var keyByteArray = Encoding.ASCII.GetBytes(symmetricKeyAsBase64);
+            var signingKey = new SymmetricSecurityKey(keyByteArray);
+
+            TokenValidationParameters validationParameters =
+            new TokenValidationParameters
+            {
+                ValidIssuer = _settings.Value.Iss,
+                ValidAudience = _settings.Value.Aud,
+                IssuerSigningKey = signingKey
+            };
+
+            SecurityToken validatedToken;
+            JwtSecurityTokenHandler handler = new JwtSecurityTokenHandler();
+            var user = handler.ValidateToken(jwt.access_token, validationParameters, out validatedToken);
+            return Ok(new {message="Token is valid"});
+        }
+        private async Task<AuthenticationToken> DoPasswordAsync(Parameters parameters)
         {
             //validate the client_id/client_secret/username/password       
             var userService = _factory.Resolve<IUserService<string>>(_factory);
@@ -110,16 +90,12 @@ namespace libragri.authentication.api.Controllers
 
             //store the refresh_token 
             refreshtokenService.Add(token);
-            return new ResponseData
-            {
-                Code = "999",
-                Message = "Ok",
-                Data = GenerateJwt(parameters.client_id, user.UserName, refresh_token, _settings.Value.ExpireMinutes)
-            };
+            return GenerateJwt(parameters.client_id, user.UserName, refresh_token, _settings.Value.ExpireMinutes);
+            
         }
 
-        //scenario 2 ： get the access_token by refresh_token
-        private async Task<ResponseData> DoRefreshTokenAsync(Parameters parameters)
+        //scenario 2 ? get the access_token by refresh_token
+        private async Task<AuthenticationToken> DoRefreshTokenAsync(Parameters parameters)
         {
             
             var refreshtokenService = _factory.Resolve<IRefreshTokenService<string>>(_factory);
@@ -142,15 +118,10 @@ namespace libragri.authentication.api.Controllers
                 UserName = token.UserName
             });
 
-            return new ResponseData
-            {
-                Code = "999",
-                Message = "Ok",
-                Data = GenerateJwt(parameters.client_id, token.UserName, refresh_token, _settings.Value.ExpireMinutes)
-            };
+            return GenerateJwt(parameters.client_id, token.UserName, refresh_token, _settings.Value.ExpireMinutes);
         }
 
-        private string GenerateJwt(string clientId, string userName, string refreshToken, int expireMinutes)
+        private AuthenticationToken GenerateJwt(string clientId, string userName, string refreshToken, int expireMinutes)
 
         {
 
@@ -200,8 +171,7 @@ namespace libragri.authentication.api.Controllers
 
 
 
-            var response = new
-
+            var response = new AuthenticationToken
             {
 
                 access_token = encodedJwt,
@@ -211,11 +181,8 @@ namespace libragri.authentication.api.Controllers
                 refresh_token = refreshToken,
 
             };
-
-
-
-            return JsonConvert.SerializeObject(response, new JsonSerializerSettings { Formatting = Formatting.Indented });
-
+            
+            return response;
         }
     }
 }

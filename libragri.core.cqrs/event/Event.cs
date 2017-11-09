@@ -4,7 +4,7 @@ using System.Text;
 
 namespace libragri.core.cqrs
 {
-    public abstract class Event<TId,TRoot> :IEvent where TRoot : IAggregateRoot<TId>
+    public abstract class Event<TId,TRoot> :IEvent where TRoot : AggregateRoot<TId>
     {
         public TId AggregateId { get; set; }
         public Type AggregateType { get; set; }

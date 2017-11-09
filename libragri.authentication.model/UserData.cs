@@ -1,5 +1,4 @@
-﻿using libragri.core.cqrs;
-using System;
+﻿
 using libragri.core.common;
 
 namespace libragri.authentication.model

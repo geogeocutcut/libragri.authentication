@@ -25,7 +25,14 @@
         "dependencies": {
           "Microsoft.AspNetCore.All": "2.0.0",
           "Microsoft.NETCore.App": "2.0.0",
-          "libragri.authentication.model": "1.0.0"
+          "libragri.authentication.model": "1.0.0",
+          "libragri.authentication.repository.inmemory": "1.0.0",
+          "libragri.authentication.repository.interfaces": "1.0.0",
+          "libragri.authentication.service.impl": "1.0.0",
+          "libragri.authentication.service.interfaces": "1.0.0",
+          "libragri.core.common": "1.0.0",
+          "libragri.core.repository": "1.0.0",
+          "libragri.core.webapi": "1.0.0"
         },
         "runtime": {
           "libragri.authentication.api.dll": {}
@@ -3797,7 +3804,7 @@
       },
       "libragri.authentication.model/1.0.0": {
         "dependencies": {
-          "libragri.core.cqrs": "1.0.0"
+          "libragri.core.common": "1.0.0"
         },
         "runtime": {
           "libragri.authentication.model.dll": {}
@@ -3806,12 +3813,85 @@
           "libragri.authentication.model.dll": {}
         }
       },
-      "libragri.core.cqrs/1.0.0": {
+      "libragri.authentication.repository.inmemory/1.0.0": {
+        "dependencies": {
+          "libragri.authentication.repository.interfaces": "1.0.0",
+          "libragri.core.common": "1.0.0"
+        },
         "runtime": {
-          "libragri.core.cqrs.dll": {}
+          "libragri.authentication.repository.inmemory.dll": {}
         },
         "compile": {
-          "libragri.core.cqrs.dll": {}
+          "libragri.authentication.repository.inmemory.dll": {}
+        }
+      },
+      "libragri.authentication.repository.interfaces/1.0.0": {
+        "dependencies": {
+          "libragri.authentication.model": "1.0.0",
+          "libragri.core.repository": "1.0.0"
+        },
+        "runtime": {
+          "libragri.authentication.repository.interfaces.dll": {}
+        },
+        "compile": {
+          "libragri.authentication.repository.interfaces.dll": {}
+        }
+      },
+      "libragri.authentication.service.impl/1.0.0": {
+        "dependencies": {
+          "libragri.authentication.model": "1.0.0",
+          "libragri.authentication.repository.interfaces": "1.0.0",
+          "libragri.authentication.service.interfaces": "1.0.0",
+          "libragri.core.common": "1.0.0",
+          "libragri.core.repository": "1.0.0"
+        },
+        "runtime": {
+          "libragri.authentication.service.impl.dll": {}
+        },
+        "compile": {
+          "libragri.authentication.service.impl.dll": {}
+        }
+      },
+      "libragri.authentication.service.interfaces/1.0.0": {
+        "dependencies": {
+          "libragri.authentication.model": "1.0.0"
+        },
+        "runtime": {
+          "libragri.authentication.service.interfaces.dll": {}
+        },
+        "compile": {
+          "libragri.authentication.service.interfaces.dll": {}
+        }
+      },
+      "libragri.core.common/1.0.0": {
+        "runtime": {
+          "libragri.core.common.dll": {}
+        },
+        "compile": {
+          "libragri.core.common.dll": {}
+        }
+      },
+      "libragri.core.repository/1.0.0": {
+        "dependencies": {
+          "libragri.core.common": "1.0.0"
+        },
+        "runtime": {
+          "libragri.core.repository.dll": {}
+        },
+        "compile": {
+          "libragri.core.repository.dll": {}
+        }
+      },
+      "libragri.core.webapi/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Mvc": "2.0.0",
+          "libragri.core.common": "1.0.0"
+        },
+        "runtime": {
+          "libragri.core.webapi.dll": {}
+        },
+        "compile": {
+          "libragri.core.webapi.dll": {}
         }
       },
       "Microsoft.NETCore.App/2.0.0": {
@@ -6005,7 +6085,37 @@
       "serviceable": false,
       "sha512": ""
     },
-    "libragri.core.cqrs/1.0.0": {
+    "libragri.authentication.repository.inmemory/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "libragri.authentication.repository.interfaces/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "libragri.authentication.service.impl/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "libragri.authentication.service.interfaces/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "libragri.core.common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "libragri.core.repository/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "libragri.core.webapi/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

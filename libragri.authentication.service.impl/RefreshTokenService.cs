@@ -31,7 +31,7 @@ namespace libragri.authentication.service.impl
         {
             using(var uow = factory.Resolve<IUnitOfWork<TId>>()){
                 var repository = factory.Resolve<IRefreshTokenRepository<TId>>(uow);
-                var refreshtoken = repository.FindWhere(x=> x.Token==token && x.ClientId==cliendid).FirstOrDefault();
+                var refreshtoken = repository.FindWhere(x=> x.Token==token && x.ClientId==cliendid)?.FirstOrDefault();
                 if(refreshtoken==null)
                 {
                     throw new ServiceException("905","invalid refresh token");

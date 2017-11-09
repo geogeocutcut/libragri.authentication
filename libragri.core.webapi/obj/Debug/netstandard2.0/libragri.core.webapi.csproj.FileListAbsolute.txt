@@ -1,0 +1,10 @@
+C:\00-dev\xx-perso\libragri\libragri.core.webapi\obj\Debug\netstandard2.0\libragri.core.webapi.csproj.CoreCompileInputs.cache
+C:\00-dev\xx-perso\libragri\libragri.core.webapi\obj\Debug\netstandard2.0\libragri.core.webapi.AssemblyInfoInputs.cache
+C:\00-dev\xx-perso\libragri\libragri.core.webapi\obj\Debug\netstandard2.0\libragri.core.webapi.AssemblyInfo.cs
+C:\00-dev\xx-perso\libragri\libragri.core.webapi\bin\Debug\netstandard2.0\libragri.core.webapi.deps.json
+C:\00-dev\xx-perso\libragri\libragri.core.webapi\bin\Debug\netstandard2.0\libragri.core.webapi.dll
+C:\00-dev\xx-perso\libragri\libragri.core.webapi\bin\Debug\netstandard2.0\libragri.core.webapi.pdb
+C:\00-dev\xx-perso\libragri\libragri.core.webapi\bin\Debug\netstandard2.0\libragri.core.common.dll
+C:\00-dev\xx-perso\libragri\libragri.core.webapi\bin\Debug\netstandard2.0\libragri.core.common.pdb
+C:\00-dev\xx-perso\libragri\libragri.core.webapi\obj\Debug\netstandard2.0\libragri.core.webapi.dll
+C:\00-dev\xx-perso\libragri\libragri.core.webapi\obj\Debug\netstandard2.0\libragri.core.webapi.pdb

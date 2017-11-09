@@ -2,11 +2,9 @@ C:\00-dev\xx-perso\libragri\libragri.authentication.repository.interfaces\bin\De
 C:\00-dev\xx-perso\libragri\libragri.authentication.repository.interfaces\bin\Debug\netstandard2.0\libragri.authentication.repository.interfaces.dll
 C:\00-dev\xx-perso\libragri\libragri.authentication.repository.interfaces\bin\Debug\netstandard2.0\libragri.authentication.repository.interfaces.pdb
 C:\00-dev\xx-perso\libragri\libragri.authentication.repository.interfaces\bin\Debug\netstandard2.0\libragri.authentication.model.dll
-C:\00-dev\xx-perso\libragri\libragri.authentication.repository.interfaces\bin\Debug\netstandard2.0\libragri.core.cqrs.dll
 C:\00-dev\xx-perso\libragri\libragri.authentication.repository.interfaces\bin\Debug\netstandard2.0\libragri.core.repository.dll
 C:\00-dev\xx-perso\libragri\libragri.authentication.repository.interfaces\bin\Debug\netstandard2.0\libragri.authentication.model.pdb
 C:\00-dev\xx-perso\libragri\libragri.authentication.repository.interfaces\bin\Debug\netstandard2.0\libragri.core.repository.pdb
-C:\00-dev\xx-perso\libragri\libragri.authentication.repository.interfaces\bin\Debug\netstandard2.0\libragri.core.cqrs.pdb
 C:\00-dev\xx-perso\libragri\libragri.authentication.repository.interfaces\obj\Debug\netstandard2.0\libragri.authentication.repository.interfaces.csproj.CoreCompileInputs.cache
 C:\00-dev\xx-perso\libragri\libragri.authentication.repository.interfaces\obj\Debug\netstandard2.0\libragri.authentication.repository.interfaces.AssemblyInfoInputs.cache
 C:\00-dev\xx-perso\libragri\libragri.authentication.repository.interfaces\obj\Debug\netstandard2.0\libragri.authentication.repository.interfaces.AssemblyInfo.cs

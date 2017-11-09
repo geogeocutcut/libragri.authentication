@@ -1,0 +1,16 @@
+C:\00-dev\xx-perso\libragri\libragri.authentication.repository.inmemory\bin\Debug\netstandard2.0\libragri.authentication.repository.inmemory.deps.json
+C:\00-dev\xx-perso\libragri\libragri.authentication.repository.inmemory\bin\Debug\netstandard2.0\libragri.authentication.repository.inmemory.dll
+C:\00-dev\xx-perso\libragri\libragri.authentication.repository.inmemory\bin\Debug\netstandard2.0\libragri.authentication.repository.inmemory.pdb
+C:\00-dev\xx-perso\libragri\libragri.authentication.repository.inmemory\bin\Debug\netstandard2.0\libragri.authentication.model.dll
+C:\00-dev\xx-perso\libragri\libragri.authentication.repository.inmemory\bin\Debug\netstandard2.0\libragri.authentication.repository.interfaces.dll
+C:\00-dev\xx-perso\libragri\libragri.authentication.repository.inmemory\bin\Debug\netstandard2.0\libragri.core.common.dll
+C:\00-dev\xx-perso\libragri\libragri.authentication.repository.inmemory\bin\Debug\netstandard2.0\libragri.core.repository.dll
+C:\00-dev\xx-perso\libragri\libragri.authentication.repository.inmemory\bin\Debug\netstandard2.0\libragri.authentication.repository.interfaces.pdb
+C:\00-dev\xx-perso\libragri\libragri.authentication.repository.inmemory\bin\Debug\netstandard2.0\libragri.core.common.pdb
+C:\00-dev\xx-perso\libragri\libragri.authentication.repository.inmemory\bin\Debug\netstandard2.0\libragri.authentication.model.pdb
+C:\00-dev\xx-perso\libragri\libragri.authentication.repository.inmemory\bin\Debug\netstandard2.0\libragri.core.repository.pdb
+C:\00-dev\xx-perso\libragri\libragri.authentication.repository.inmemory\obj\Debug\netstandard2.0\libragri.authentication.repository.inmemory.csproj.CoreCompileInputs.cache
+C:\00-dev\xx-perso\libragri\libragri.authentication.repository.inmemory\obj\Debug\netstandard2.0\libragri.authentication.repository.inmemory.AssemblyInfoInputs.cache
+C:\00-dev\xx-perso\libragri\libragri.authentication.repository.inmemory\obj\Debug\netstandard2.0\libragri.authentication.repository.inmemory.AssemblyInfo.cs
+C:\00-dev\xx-perso\libragri\libragri.authentication.repository.inmemory\obj\Debug\netstandard2.0\libragri.authentication.repository.inmemory.dll
+C:\00-dev\xx-perso\libragri\libragri.authentication.repository.inmemory\obj\Debug\netstandard2.0\libragri.authentication.repository.inmemory.pdb
