@@ -1,9 +1,0 @@
-C:\01-dev\libragri.authentication\libragri.core.cqrs\bin\Debug\netcoreapp2.0\libragri.core.cqrs.deps.json
-C:\01-dev\libragri.authentication\libragri.core.cqrs\bin\Debug\netcoreapp2.0\libragri.core.cqrs.dll
-C:\01-dev\libragri.authentication\libragri.core.cqrs\bin\Debug\netcoreapp2.0\libragri.core.cqrs.pdb
-C:\01-dev\libragri.authentication\libragri.core.cqrs\obj\Debug\netcoreapp2.0\libragri.core.cqrs.csprojResolveAssemblyReference.cache
-C:\01-dev\libragri.authentication\libragri.core.cqrs\obj\Debug\netcoreapp2.0\libragri.core.cqrs.csproj.CoreCompileInputs.cache
-C:\01-dev\libragri.authentication\libragri.core.cqrs\obj\Debug\netcoreapp2.0\libragri.core.cqrs.AssemblyInfoInputs.cache
-C:\01-dev\libragri.authentication\libragri.core.cqrs\obj\Debug\netcoreapp2.0\libragri.core.cqrs.AssemblyInfo.cs
-C:\01-dev\libragri.authentication\libragri.core.cqrs\obj\Debug\netcoreapp2.0\libragri.core.cqrs.dll
-C:\01-dev\libragri.authentication\libragri.core.cqrs\obj\Debug\netcoreapp2.0\libragri.core.cqrs.pdb
