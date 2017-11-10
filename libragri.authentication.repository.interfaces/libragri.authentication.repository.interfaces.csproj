@@ -6,7 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\libragri.authentication.model\libragri.authentication.model.csproj" />
-    <ProjectReference Include="..\libragri.core.repository\libragri.core.repository.csproj" />
+    <ProjectReference Include="..\libragri.core\libragri.core.repository\libragri.core.repository.csproj" />
   </ItemGroup>
 
 </Project>

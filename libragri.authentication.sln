@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "libragri.authentication.rep
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "libragri.authentication.repository.interfaces", "libragri.authentication.repository.interfaces\libragri.authentication.repository.interfaces.csproj", "{F9D808BC-1DF4-46BC-AFD8-6E5046AA189B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "libragri.core.repository", "libragri.core.repository\libragri.core.repository.csproj", "{EF621753-8C41-49EA-9FE1-B03D09A080CF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "libragri.core.repository", "libragri.core\libragri.core.repository\libragri.core.repository.csproj", "{EF621753-8C41-49EA-9FE1-B03D09A080CF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "libragri.authentication.model", "libragri.authentication.model\libragri.authentication.model.csproj", "{73A2C97D-F5A1-44E4-BA8A-7408F2C1E7C9}"
 EndProject
@@ -19,9 +19,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "libragri.authentication.ser
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "libragri.authentication.repository.inmemory", "libragri.authentication.repository.inmemory\libragri.authentication.repository.inmemory.csproj", "{86FB30B9-5E78-49CA-A022-23E7D5D3198C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "libragri.core.common", "libragri.core.common\libragri.core.common.csproj", "{1A2AB85F-15C3-4134-8C0A-DE3E3B8A25E9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "libragri.core.common", "libragri.core\libragri.core.common\libragri.core.common.csproj", "{1A2AB85F-15C3-4134-8C0A-DE3E3B8A25E9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "libragri.core.webapi", "libragri.core.webapi\libragri.core.webapi.csproj", "{76FDD063-E8B7-4906-974C-A4D29330FDB5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "libragri.core.webapi", "libragri.core\libragri.core.webapi\libragri.core.webapi.csproj", "{76FDD063-E8B7-4906-974C-A4D29330FDB5}"
 EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
