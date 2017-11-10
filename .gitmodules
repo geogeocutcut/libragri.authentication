@@ -1,0 +1,3 @@
+[submodule "libragri.core"]
+	path = libragri.core
+	url = https://github.com/geogeocutcut/libragri.core.git
