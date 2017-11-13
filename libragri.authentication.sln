@@ -23,11 +23,19 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "libragri.core.common", "lib
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "libragri.core.webapi", "libragri.core\libragri.core.webapi\libragri.core.webapi.csproj", "{76FDD063-E8B7-4906-974C-A4D29330FDB5}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "libragri.core", "libragri.core", "{CEDB3D6B-5F41-4177-AAED-4E4EDAFEBB51}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "libragri.core.repository.inmemorydb", "libragri.core\libragri.core.repository.inmemorydb\libragri.core.repository.inmemorydb.csproj", "{86D140E8-E83D-4FFB-9901-0281CE1A58A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "libragri.core.repository.mongodb", "libragri.core\libragri.core.repository.mongodb\libragri.core.repository.mongodb.csproj", "{EF06DDBC-5154-4492-8210-71AC8797BCA1}"
+EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{86D140E8-E83D-4FFB-9901-0281CE1A58A3} = {CEDB3D6B-5F41-4177-AAED-4E4EDAFEBB51}
+		{EF06DDBC-5154-4492-8210-71AC8797BCA1} = {CEDB3D6B-5F41-4177-AAED-4E4EDAFEBB51}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4C4DA022-21ED-4C91-8C91-ECBA5FB7F9B0}
@@ -161,5 +169,29 @@ Global
 		{76FDD063-E8B7-4906-974C-A4D29330FDB5}.Release|x64.Build.0 = Release|x64
 		{76FDD063-E8B7-4906-974C-A4D29330FDB5}.Release|x86.ActiveCfg = Release|x86
 		{76FDD063-E8B7-4906-974C-A4D29330FDB5}.Release|x86.Build.0 = Release|x86
+		{86D140E8-E83D-4FFB-9901-0281CE1A58A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86D140E8-E83D-4FFB-9901-0281CE1A58A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86D140E8-E83D-4FFB-9901-0281CE1A58A3}.Debug|x64.ActiveCfg = Debug|x64
+		{86D140E8-E83D-4FFB-9901-0281CE1A58A3}.Debug|x64.Build.0 = Debug|x64
+		{86D140E8-E83D-4FFB-9901-0281CE1A58A3}.Debug|x86.ActiveCfg = Debug|x86
+		{86D140E8-E83D-4FFB-9901-0281CE1A58A3}.Debug|x86.Build.0 = Debug|x86
+		{86D140E8-E83D-4FFB-9901-0281CE1A58A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86D140E8-E83D-4FFB-9901-0281CE1A58A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86D140E8-E83D-4FFB-9901-0281CE1A58A3}.Release|x64.ActiveCfg = Release|x64
+		{86D140E8-E83D-4FFB-9901-0281CE1A58A3}.Release|x64.Build.0 = Release|x64
+		{86D140E8-E83D-4FFB-9901-0281CE1A58A3}.Release|x86.ActiveCfg = Release|x86
+		{86D140E8-E83D-4FFB-9901-0281CE1A58A3}.Release|x86.Build.0 = Release|x86
+		{EF06DDBC-5154-4492-8210-71AC8797BCA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF06DDBC-5154-4492-8210-71AC8797BCA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF06DDBC-5154-4492-8210-71AC8797BCA1}.Debug|x64.ActiveCfg = Debug|x64
+		{EF06DDBC-5154-4492-8210-71AC8797BCA1}.Debug|x64.Build.0 = Debug|x64
+		{EF06DDBC-5154-4492-8210-71AC8797BCA1}.Debug|x86.ActiveCfg = Debug|x86
+		{EF06DDBC-5154-4492-8210-71AC8797BCA1}.Debug|x86.Build.0 = Debug|x86
+		{EF06DDBC-5154-4492-8210-71AC8797BCA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF06DDBC-5154-4492-8210-71AC8797BCA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF06DDBC-5154-4492-8210-71AC8797BCA1}.Release|x64.ActiveCfg = Release|x64
+		{EF06DDBC-5154-4492-8210-71AC8797BCA1}.Release|x64.Build.0 = Release|x64
+		{EF06DDBC-5154-4492-8210-71AC8797BCA1}.Release|x86.ActiveCfg = Release|x86
+		{EF06DDBC-5154-4492-8210-71AC8797BCA1}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 EndGlobal
