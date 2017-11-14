@@ -7,6 +7,7 @@
   <ItemGroup>
     <ProjectReference Include="..\libragri.authentication.repository.interfaces\libragri.authentication.repository.interfaces.csproj" />
     <ProjectReference Include="..\libragri.core\libragri.core.common\libragri.core.common.csproj" />
+    <ProjectReference Include="..\libragri.core\libragri.core.repository.mongodb\libragri.core.repository.mongodb.csproj" />
   </ItemGroup>
 
 </Project>

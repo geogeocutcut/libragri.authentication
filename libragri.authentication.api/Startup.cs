@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using libragri.authentication.model;
 using libragri.authentication.repository.interfaces;
-using libragri.authentication.repository.inmemory;
+using libragri.authentication.repository.mongodb;
 using libragri.authentication.service.impl;
 using libragri.authentication.service.interfaces;
 using libragri.core.common;
