@@ -16,6 +16,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using libragri.core.webapi;
+using libragri.core.repository.mongodb;
+using MongoDB.Driver;
 
 namespace libragri.authentication.api
 {
@@ -36,11 +38,13 @@ namespace libragri.authentication.api
             factory.Register<IUserService<string>,UserService<string>>();
             factory.Register<IRefreshTokenService<string>,RefreshTokenService<string>>();
             // repository factory
-            factory.Register<IUserRepository<string>,UserRepositoryInMemory<string>>();
-            factory.Register<IRefreshTokenRepository<string>,RefreshTokenRepositoryInMemory<string>>();
+            factory.Register<IUserRepository<string>,UserRepositoryMongodb<string>>();
+            factory.Register<IRefreshTokenRepository<string>,RefreshTokenRepositoryMongodb<string>>();
             
             // Store factory
-            var store = new StoreInMemory<string>();
+            var conectionStr = Configuration.GetSection("DbConfiguration").GetValue("ConnectionStr","");
+            var dbName=Configuration.GetSection("DbConfiguration").GetValue("DatabaseName","");
+            var store = new StoreMongodb<string>(new MongoClient(conectionStr),dbName);
             store.Upsert(new UserData<string>{
                 Id="glefevre",
                 UserName="glefevre",
@@ -49,7 +53,7 @@ namespace libragri.authentication.api
             });
             factory.Register<IStore<string>>(store);
             // unit of work factory
-            var uow = new UnitOfWorkInMemory<string>(store);
+            var uow = new UnitOfWorkMongodb<string>(store);
             factory.Register<IUnitOfWork<string>>(uow);
 
             services.AddSingleton<IFactory>(factory);
