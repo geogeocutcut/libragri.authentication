@@ -85,12 +85,13 @@ namespace libragri.authentication.api.Controllers
                 Token = refresh_token,
                 Id = Guid.NewGuid().ToString(),
                 IsStop = 0,
-                UserName = user.UserName
+                UserName = user.UserName,
+                UserId = user.Id
             };
 
             //store the refresh_token 
             await refreshtokenService.AddAsync(token);
-            return GenerateJwt(parameters.client_id, user.UserName, refresh_token, _settings.Value.ExpireMinutes);
+            return GenerateJwt(parameters.client_id,user.Id, user.UserName, refresh_token, _settings.Value.ExpireMinutes);
             
         }
 
@@ -115,13 +116,14 @@ namespace libragri.authentication.api.Controllers
                 Token = refresh_token,
                 Id = Guid.NewGuid().ToString(),
                 IsStop = 0,
-                UserName = token.UserName
+                UserName = token.UserName,
+                UserId = token.UserId
             });
 
-            return GenerateJwt(parameters.client_id, token.UserName, refresh_token, _settings.Value.ExpireMinutes);
+            return GenerateJwt(parameters.client_id,token.UserId, token.UserName, refresh_token, _settings.Value.ExpireMinutes);
         }
 
-        private AuthenticationToken GenerateJwt(string clientId, string userName, string refreshToken, int expireMinutes)
+        private AuthenticationToken GenerateJwt(string clientId, string userId, string userName, string refreshToken, int expireMinutes)
 
         {
 
@@ -139,7 +141,9 @@ namespace libragri.authentication.api.Controllers
 
                 new Claim(JwtRegisteredClaimNames.Iat, now.ToUniversalTime().ToString(), ClaimValueTypes.Integer64),
 
-                new Claim("Name", userName)
+                new Claim("UserName", userName),
+
+                new Claim("UserId",userId)
 
             };
 

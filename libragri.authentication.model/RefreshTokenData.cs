@@ -13,5 +13,6 @@ namespace libragri.authentication.model
         public int IsStop { get; set; }
 
         public string UserName { get; set; }
+        public string UserId { get; set; }
     }
 }

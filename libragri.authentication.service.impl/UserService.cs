@@ -21,6 +21,14 @@ namespace libragri.authentication.service.impl
             this.factory=factory;
         }
 
+        public async Task<UserData<TId>> AddUserAsync(UserData<TId> user)
+        {
+            using(var uow = factory.Resolve<IUnitOfWork<TId>>()){
+                var repository = factory.Resolve<IUserRepository<TId>>(uow);
+                return (await repository.UpsertAsync(user));
+            }
+        }
+
         public async Task<UserData<TId>> AuthentifyAsync(string username, string pwd)
         {
             using(var uow = factory.Resolve<IUnitOfWork<TId>>()){
