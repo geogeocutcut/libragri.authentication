@@ -74,7 +74,7 @@ namespace libragri.authentication.api.Controllers
             var userService = _factory.Resolve<IUserService<string>>(_factory);
             var refreshtokenService = _factory.Resolve<IRefreshTokenService<string>>(_factory);
 
-            var user = userService.Authentify(parameters.username,parameters.password);                                   
+            var user = await userService.AuthentifyAsync(parameters.username,parameters.password);                                   
 
 
             var refresh_token = Guid.NewGuid().ToString().Replace("-", "");
@@ -89,7 +89,7 @@ namespace libragri.authentication.api.Controllers
             };
 
             //store the refresh_token 
-            refreshtokenService.Add(token);
+            await refreshtokenService.AddAsync(token);
             return GenerateJwt(parameters.client_id, user.UserName, refresh_token, _settings.Value.ExpireMinutes);
             
         }
@@ -100,16 +100,16 @@ namespace libragri.authentication.api.Controllers
             
             var refreshtokenService = _factory.Resolve<IRefreshTokenService<string>>(_factory);
 
-            var token = refreshtokenService.CheckRefreshToken(parameters.refresh_token, parameters.client_id);
+            var token = await refreshtokenService.CheckRefreshTokenAsync(parameters.refresh_token, parameters.client_id);
 
             var refresh_token = Guid.NewGuid().ToString().Replace("-", "");
 
             token.IsStop = 1;
 
             //expire the old refresh_token and add a new refresh_token
-            refreshtokenService.ExpireToken(token);
+            await refreshtokenService.ExpireTokenAsync(token);
 
-            refreshtokenService.Add(new RefreshTokenData<string>
+            await refreshtokenService.AddAsync(new RefreshTokenData<string>
             {
                 ClientId = parameters.client_id,
                 Token = refresh_token,

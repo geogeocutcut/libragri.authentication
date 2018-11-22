@@ -18,6 +18,8 @@ using Microsoft.Extensions.Options;
 using libragri.core.webapi;
 using libragri.core.repository.mongodb;
 using MongoDB.Driver;
+using libragri.authentication.repository.inmemory;
+using libragri.core.repository.inmemorydb;
 
 namespace libragri.authentication.api
 {
@@ -38,22 +40,38 @@ namespace libragri.authentication.api
             factory.Register<IUserService<string>,UserService<string>>();
             factory.Register<IRefreshTokenService<string>,RefreshTokenService<string>>();
             // repository factory
-            factory.Register<IUserRepository<string>,UserRepositoryMongodb<string>>();
-            factory.Register<IRefreshTokenRepository<string>,RefreshTokenRepositoryMongodb<string>>();
+            // factory.Register<IUserRepository<string>,UserRepositoryMongodb<string>>();
+            // factory.Register<IRefreshTokenRepository<string>,RefreshTokenRepositoryMongodb<string>>();
+            
+            // // Store factory
+            // var conectionStr = Configuration.GetSection("DbConfiguration").GetValue("ConnectionStr","");
+            // var dbName=Configuration.GetSection("DbConfiguration").GetValue("DatabaseName","");
+            // var store = new StoreMongodb<string>(new MongoClient(conectionStr),dbName);
+            // store.Upsert(new UserData<string>{
+            //     Id="glefevre",
+            //     UserName="glefevre",
+            //     PwdSHA1="calorix",
+            //     Email="glefevre@yahoo.fr"
+            // });
+            // factory.Register<IStore<string>>(store);
+            // // unit of work factory
+            // var uow = new UnitOfWorkMongodb<string>(store);
+
+            factory.Register<IUserRepository<string>,UserRepositoryInMemory<string>>();
+            factory.Register<IRefreshTokenRepository<string>,RefreshTokenRepositoryInMemory<string>>();
             
             // Store factory
-            var conectionStr = Configuration.GetSection("DbConfiguration").GetValue("ConnectionStr","");
-            var dbName=Configuration.GetSection("DbConfiguration").GetValue("DatabaseName","");
-            var store = new StoreMongodb<string>(new MongoClient(conectionStr),dbName);
-            store.Upsert(new UserData<string>{
+            var store = new StoreInMemory<string>();
+            store.UpsertAsync(new UserData<string>{
                 Id="glefevre",
                 UserName="glefevre",
                 PwdSHA1="calorix",
                 Email="glefevre@yahoo.fr"
-            });
+            }).Wait();
             factory.Register<IStore<string>>(store);
             // unit of work factory
-            var uow = new UnitOfWorkMongodb<string>(store);
+            var uow = new UnitOfWorkInMemory<string>(store);
+
             factory.Register<IUnitOfWork<string>>(uow);
 
             services.AddSingleton<IFactory>(factory);

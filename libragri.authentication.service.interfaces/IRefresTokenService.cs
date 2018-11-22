@@ -1,13 +1,14 @@
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using libragri.authentication.model;
 
 namespace libragri.authentication.service.interfaces
 {
     public interface IRefreshTokenService<TId>
     {
-        void Add(RefreshTokenData<TId> token);
-        void ExpireToken(RefreshTokenData<TId> token);
-        RefreshTokenData<TId> CheckRefreshToken(string token,string cliendid);
+        Task AddAsync(RefreshTokenData<TId> token);
+        Task ExpireTokenAsync(RefreshTokenData<TId> token);
+        Task<RefreshTokenData<TId>> CheckRefreshTokenAsync(string token,string cliendid);
     }
 }

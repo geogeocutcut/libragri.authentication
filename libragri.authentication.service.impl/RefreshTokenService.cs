@@ -8,6 +8,7 @@ using libragri.core.repository;
 using System.Text;
 using System.Security.Claims;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace libragri.authentication.service.impl
 {
@@ -19,19 +20,19 @@ namespace libragri.authentication.service.impl
         {
             this.factory=factory;
         }
-        public void Add(RefreshTokenData<TId> token)
+        public async Task AddAsync(RefreshTokenData<TId> token)
         {
             using(var uow = factory.Resolve<IUnitOfWork<TId>>()){
                 var repository = factory.Resolve<IRefreshTokenRepository<TId>>(uow);
-                repository.Upsert(token);
+                await repository.UpsertAsync(token);
             }
         }
 
-        public RefreshTokenData<TId> CheckRefreshToken(string token,string cliendid)
+        public async Task<RefreshTokenData<TId>> CheckRefreshTokenAsync(string token,string cliendid)
         {
             using(var uow = factory.Resolve<IUnitOfWork<TId>>()){
                 var repository = factory.Resolve<IRefreshTokenRepository<TId>>(uow);
-                var refreshtoken = repository.FindWhere(x=> x.Token==token && x.ClientId==cliendid)?.FirstOrDefault();
+                var refreshtoken = (await repository.FindAsync(x=> x.Token==token && x.ClientId==cliendid))?.FirstOrDefault();
                 if(refreshtoken==null)
                 {
                     throw new ServiceException("905","invalid refresh token");
@@ -39,11 +40,11 @@ namespace libragri.authentication.service.impl
                 return refreshtoken;
             }
         }
-        public void ExpireToken(RefreshTokenData<TId> token)
+        public async Task ExpireTokenAsync(RefreshTokenData<TId> token)
         {
             using(var uow = factory.Resolve<IUnitOfWork<TId>>()){
                 var repository = factory.Resolve<IRefreshTokenRepository<TId>>(uow);
-                repository.Delete(token);
+                await repository.DeleteAsync(token);
             }
         }
     }

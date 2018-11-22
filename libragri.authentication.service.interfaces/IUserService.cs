@@ -1,12 +1,13 @@
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using libragri.authentication.model;
 
 namespace libragri.authentication.service.interfaces
 {
     public interface IUserService<TId>
     {
-        UserData<TId> GetByUserName(string username);
-        UserData<TId> Authentify(string username,string pwd);
+        Task<UserData<TId>> GetByUserNameAsync(string username);
+        Task<UserData<TId>> AuthentifyAsync(string username,string pwd);
     }
 }

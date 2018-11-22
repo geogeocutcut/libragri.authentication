@@ -8,6 +8,7 @@ using libragri.core.repository;
 using System.Text;
 using System.Security.Claims;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace libragri.authentication.service.impl
 {
@@ -20,11 +21,11 @@ namespace libragri.authentication.service.impl
             this.factory=factory;
         }
 
-        public UserData<TId> Authentify(string username, string pwd)
+        public async Task<UserData<TId>> AuthentifyAsync(string username, string pwd)
         {
             using(var uow = factory.Resolve<IUnitOfWork<TId>>()){
                 var repository = factory.Resolve<IUserRepository<TId>>(uow);
-                var user = repository.FindWhere(x=>x.UserName==username).FirstOrDefault();
+                var user = (await repository.FindAsync(x=>x.UserName==username))?.FirstOrDefault();
                 if(user==null ||user?.PwdSHA1!=pwd)
                 {
                     throw new ServiceException("902","invalid user");
@@ -33,11 +34,11 @@ namespace libragri.authentication.service.impl
             }
         }
 
-        public UserData<TId> GetByUserName(string username)
+        public async Task<UserData<TId>> GetByUserNameAsync(string username)
         {
             using(var uow = factory.Resolve<IUnitOfWork<TId>>()){
                 var repository = factory.Resolve<IUserRepository<TId>>(uow);
-                var user = repository.FindWhere(x=>x.UserName==username).FirstOrDefault();
+                var user = (await repository.FindAsync(x=>x.UserName==username))?.FirstOrDefault();
                 return user;
             }
         }
