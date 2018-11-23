@@ -18,9 +18,9 @@ namespace libragri.authentication.api.Controllers
         [Route("add")]
         [HttpPost]
  
-        public async Task<IActionResult> CreateUserAsync([FromBody] UserData<string> user)
+        public async Task<IActionResult> CreateUserAsync([FromBody] UserData user)
         {
-            var userService = _factory.Resolve<IUserService<string>>(_factory);
+            var userService = _factory.Resolve<IUserService>(_factory);
             return Ok(await userService.AddUserAsync(user));
         }
     }

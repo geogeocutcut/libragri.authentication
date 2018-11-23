@@ -4,7 +4,7 @@ using System;
 
 namespace libragri.authentication.repository.interfaces
 {
-    public interface IRefreshTokenRepository<TId>:IRepository<TId,RefreshTokenData<TId>>
+    public interface IRefreshTokenRepository:IRepository<string,RefreshTokenData>
     {
     }
 }

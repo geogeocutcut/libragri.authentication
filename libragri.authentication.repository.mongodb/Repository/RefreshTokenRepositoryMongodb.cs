@@ -6,9 +6,9 @@ using libragri.core.repository.mongodb;
 
 namespace libragri.authentication.repository.mongodb
 {
-    public class RefreshTokenRepositoryMongodb<TId> : RepositoryMongodb<TId, RefreshTokenData<TId>>, IRefreshTokenRepository<TId>
+    public class RefreshTokenRepositoryMongodb : RepositoryMongodb<string, RefreshTokenData>, IRefreshTokenRepository
     {
-        public RefreshTokenRepositoryMongodb(UnitOfWorkMongodb<TId> uow) : base(uow)
+        public RefreshTokenRepositoryMongodb(UnitOfWorkMongodb<string> uow) : base(uow)
         {
 
         }

@@ -5,10 +5,10 @@ using libragri.authentication.model;
 
 namespace libragri.authentication.service.interfaces
 {
-    public interface IRefreshTokenService<TId>
+    public interface IRefreshTokenService
     {
-        Task AddAsync(RefreshTokenData<TId> token);
-        Task ExpireTokenAsync(RefreshTokenData<TId> token);
-        Task<RefreshTokenData<TId>> CheckRefreshTokenAsync(string token,string cliendid);
+        Task AddAsync(RefreshTokenData token);
+        Task ExpireTokenAsync(RefreshTokenData token);
+        Task<RefreshTokenData> CheckRefreshTokenAsync(string token,string cliendid);
     }
 }

@@ -6,9 +6,9 @@ using libragri.core.repository.inmemorydb;
 
 namespace libragri.authentication.repository.inmemory
 {
-    public class RefreshTokenRepositoryInMemory<TId> : RepositoryInMemory<TId, RefreshTokenData<TId>>, IRefreshTokenRepository<TId>
+    public class RefreshTokenRepositoryInMemory : RepositoryInMemory<string, RefreshTokenData>, IRefreshTokenRepository
     {
-        public RefreshTokenRepositoryInMemory(UnitOfWorkInMemory<TId> uow) : base(uow)
+        public RefreshTokenRepositoryInMemory(UnitOfWorkInMemory<string> uow) : base(uow)
         {
 
         }

@@ -3,9 +3,9 @@ using libragri.core.common;
 
 namespace libragri.authentication.model
 {
-    public class UserData<TId> : Entity<TId>
+    public class UserData : Entity<string>
     {
-        public virtual string UserName { get; set; }
+        public virtual string Login { get; set; }
         public virtual string PwdSHA1 { get; set; }
         public virtual string Email { get; set; }
     }

@@ -5,10 +5,10 @@ using libragri.authentication.model;
 
 namespace libragri.authentication.service.interfaces
 {
-    public interface IUserService<TId>
+    public interface IUserService
     {
-        Task<UserData<TId>> AddUserAsync(UserData<TId> username);
-        Task<UserData<TId>> GetByUserNameAsync(string username);
-        Task<UserData<TId>> AuthentifyAsync(string username,string pwd);
+        Task<UserData> AddUserAsync(UserData user);
+        Task<UserData> GetByUserNameAsync(string username);
+        Task<UserData> AuthentifyAsync(string username,string pwd);
     }
 }

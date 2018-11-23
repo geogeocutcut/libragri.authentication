@@ -23,6 +23,7 @@
     <ProjectReference Include="..\libragri.authentication.repository.inmemory\libragri.authentication.repository.inmemory.csproj" />
     <ProjectReference Include="..\libragri.authentication.repository.mongodb\libragri.authentication.repository.mongodb.csproj" />
     <ProjectReference Include="..\libragri.authentication.repository.interfaces\libragri.authentication.repository.interfaces.csproj" />
+    <ProjectReference Include="..\libragri.authentication.specification\libragri.authentication.specification.csproj" />
     
     <ProjectReference Include="..\libragri.core\libragri.core.common\libragri.core.common.csproj" />
     <ProjectReference Include="..\libragri.core\libragri.core.repository\libragri.core.repository.csproj" />

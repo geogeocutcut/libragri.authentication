@@ -20,6 +20,7 @@ using libragri.core.repository.mongodb;
 using MongoDB.Driver;
 using libragri.authentication.repository.inmemory;
 using libragri.core.repository.inmemorydb;
+using libragri.authentication.specification;
 
 namespace libragri.authentication.api
 {
@@ -37,8 +38,8 @@ namespace libragri.authentication.api
         {
             var factory = new Factory();
             // service factory
-            factory.Register<IUserService<string>,UserService<string>>();
-            factory.Register<IRefreshTokenService<string>,RefreshTokenService<string>>();
+            factory.Register<IUserService,UserService>();
+            factory.Register<IRefreshTokenService,RefreshTokenService>();
             // repository factory
             // factory.Register<IUserRepository<string>,UserRepositoryMongodb<string>>();
             // factory.Register<IRefreshTokenRepository<string>,RefreshTokenRepositoryMongodb<string>>();
@@ -57,14 +58,14 @@ namespace libragri.authentication.api
             // // unit of work factory
             // var uow = new UnitOfWorkMongodb<string>(store);
 
-            factory.Register<IUserRepository<string>,UserRepositoryInMemory<string>>();
-            factory.Register<IRefreshTokenRepository<string>,RefreshTokenRepositoryInMemory<string>>();
+            factory.Register<IUserRepository,UserRepositoryInMemory>();
+            factory.Register<IRefreshTokenRepository,RefreshTokenRepositoryInMemory>();
             
             // Store factory
             var store = new StoreInMemory<string>();
-            store.UpsertAsync(new UserData<string>{
-                Id="glefevre",
-                UserName="glefevre",
+            store.UpsertAsync(new UserData{
+                Id=Guid.NewGuid().ToString(),
+                Login="glefevre",
                 PwdSHA1="calorix",
                 Email="glefevre@yahoo.fr"
             }).Wait();
