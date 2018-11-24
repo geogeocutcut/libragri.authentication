@@ -6,9 +6,9 @@ using libragri.core.repository.inmemorydb;
 
 namespace libragri.authentication.repository.inmemory
 {
-    public class UserRepositoryInMemory : RepositoryInMemory<string, UserData>, IUserRepository
+    public class UserRepositoryInMemory : Repository<string, UserData>, IUserRepository
     {
-        public UserRepositoryInMemory(UnitOfWorkInMemory<string> uow) : base(uow)
+        public UserRepositoryInMemory(IStore<string> store) : base(store)
         {
 
         }

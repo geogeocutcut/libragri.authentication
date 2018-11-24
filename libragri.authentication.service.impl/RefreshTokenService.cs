@@ -23,7 +23,7 @@ namespace libragri.authentication.service.impl
         public async Task AddAsync(RefreshTokenData token)
         {
             using(var uow = factory.Resolve<IUnitOfWork<string>>()){
-                var repository = factory.Resolve<IRefreshTokenRepository>(uow);
+                var repository = factory.Resolve<IRefreshTokenRepository>(uow.GetStore());
                 await repository.UpsertAsync(token);
             }
         }
@@ -31,7 +31,7 @@ namespace libragri.authentication.service.impl
         public async Task<RefreshTokenData> CheckRefreshTokenAsync(string token,string cliendid)
         {
             using(var uow = factory.Resolve<IUnitOfWork<string>>()){
-                var repository = factory.Resolve<IRefreshTokenRepository>(uow);
+                var repository = factory.Resolve<IRefreshTokenRepository>(uow.GetStore());
                 var refreshtoken = (await repository.FindAsync(x=> x.Token==token && x.ClientId==cliendid))?.FirstOrDefault();
                 if(refreshtoken==null)
                 {
@@ -43,7 +43,7 @@ namespace libragri.authentication.service.impl
         public async Task ExpireTokenAsync(RefreshTokenData token)
         {
             using(var uow = factory.Resolve<IUnitOfWork<string>>()){
-                var repository = factory.Resolve<IRefreshTokenRepository>(uow);
+                var repository = factory.Resolve<IRefreshTokenRepository>(uow.GetStore());
                 await repository.DeleteAsync(token);
             }
         }

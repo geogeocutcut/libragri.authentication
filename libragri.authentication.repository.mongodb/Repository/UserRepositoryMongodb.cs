@@ -6,9 +6,9 @@ using libragri.core.repository.mongodb;
 
 namespace libragri.authentication.repository.mongodb
 {
-    public class UserRepositoryMongodb : RepositoryMongodb<string, UserData>, IUserRepository
+    public class UserRepositoryMongodb : Repository<string, UserData>, IUserRepository
     {
-        public UserRepositoryMongodb(UnitOfWorkMongodb<string> uow) : base(uow)
+        public UserRepositoryMongodb(IStore<string> store) : base(store)
         {
 
         }

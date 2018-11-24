@@ -2,13 +2,12 @@
 using libragri.authentication.repository.interfaces;
 using libragri.core.repository;
 using System;
-using libragri.core.repository.inmemorydb;
 
 namespace libragri.authentication.repository.inmemory
 {
-    public class RefreshTokenRepositoryInMemory : RepositoryInMemory<string, RefreshTokenData>, IRefreshTokenRepository
+    public class RefreshTokenRepositoryInMemory : Repository<string, RefreshTokenData>, IRefreshTokenRepository
     {
-        public RefreshTokenRepositoryInMemory(UnitOfWorkInMemory<string> uow) : base(uow)
+        public RefreshTokenRepositoryInMemory(IStore<string> store) : base(store)
         {
 
         }

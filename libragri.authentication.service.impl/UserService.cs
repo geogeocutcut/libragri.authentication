@@ -15,6 +15,7 @@ namespace libragri.authentication.service.impl
 {
     public class UserService : IUserService
     {
+        static LoginSpecification specLogin = new LoginSpecification();
         IFactory factory;
         
         public UserService(IFactory factory)
@@ -26,10 +27,14 @@ namespace libragri.authentication.service.impl
         {
             using(var uow = factory.Resolve<IUnitOfWork<string>>())
             {
-                LoginSpecification spec = new LoginSpecification();
-                if(!spec.IsSatisfiedBy(user))
-                    throw new ServiceException("Invalid user","The email is not valid !");
-                var repository = factory.Resolve<IUserRepository>(uow);
+                if(!specLogin.IsSatisfiedBy(user))
+                    throw new ServiceException("Invalid user","The Login must be a valid email !");
+                
+                user.Email=user.Login;
+                var repository = factory.Resolve<IUserRepository>(uow.GetStore());
+                if((await repository.FindAsync(u=>u.Login.Equals(user.Login))).Count()>0)
+                    throw new ServiceException("Invalid user","This Login already exit !");
+                
                 return (await repository.UpsertAsync(user));
             }
         }
@@ -37,7 +42,7 @@ namespace libragri.authentication.service.impl
         public async Task<UserData> AuthentifyAsync(string login, string pwd)
         {
             using(var uow = factory.Resolve<IUnitOfWork<string>>()){
-                var repository = factory.Resolve<IUserRepository>(uow);
+                var repository = factory.Resolve<IUserRepository>(uow.GetStore());
                 var user = (await repository.FindAsync(x=>x.Login==login))?.FirstOrDefault();
                 if(user==null ||user?.PwdSHA1!=pwd)
                 {
@@ -50,7 +55,7 @@ namespace libragri.authentication.service.impl
         public async Task<UserData> GetByUserNameAsync(string login)
         {
             using(var uow = factory.Resolve<IUnitOfWork<string>>()){
-                var repository = factory.Resolve<IUserRepository>(uow);
+                var repository = factory.Resolve<IUserRepository>(uow.GetStore());
                 var user = (await repository.FindAsync(x=>x.Login==login))?.FirstOrDefault();
                 return user;
             }

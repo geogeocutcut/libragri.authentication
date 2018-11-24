@@ -14,7 +14,7 @@ namespace libragri.authentication.specification
 
         public override bool IsSatisfiedBy(UserData o)
         {
-            return rx.IsMatch(o.Email);
+            return rx.IsMatch(o.Login);
         }
     }
 }
